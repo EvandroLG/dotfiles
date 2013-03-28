@@ -11,7 +11,7 @@ export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 
 # python
 alias pyclean='find . -name "*.pyc" -exec rm {} \;'
-alias pip-uninstall-all="pip freeze | xargs pip uninstall -y"
+alias pipuninstallall="pip freeze | xargs pip uninstall -y"
 
 # colors
 export LSCOLORS='DxGxcxdxCxegedabagacad'
