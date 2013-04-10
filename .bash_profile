@@ -5,18 +5,13 @@ alias mate="open -a TextMate.app"
 alias mysql="/usr/local/mysql/bin/mysql"
 alias mysqladmin="/usr/local/mysql/bin/mysqladmin"
 alias mysqlconfig="/usr/local/mysql/bin/mysql_config"
-
-# django
-alias django-start="python ./manage.py runserver"
-alias django-projectproject="django-admin.py startproject"
-alias django-syncdb="python manage.py syncdb"
-alias django-startapp="python manage.py startapp"
-alias django-sql="python manage.py sql"
-alias django-validate="python manage.py validate"
-alias django-shell="python manage.py shell"
+export PATH=$PATH:/usr/local/mysql/bin
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 
 # python
 alias pyclean='find . -name "*.pyc" -exec rm {} \;'
+alias pipuninstallall="pip freeze | xargs pip uninstall -y"
 
 # colors
 export LSCOLORS='DxGxcxdxCxegedabagacad'
@@ -28,3 +23,4 @@ PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PATH=/usr/local/bin:$PATH
