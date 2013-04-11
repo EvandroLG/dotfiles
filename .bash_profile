@@ -2,7 +2,7 @@
 alias sourceprofile="source ~/.bash_profile"
 
 # softwares
-alias mate="open -a TextMate.app"
+alias subl="open -a /Applications/Sublime\ Text\ 2.app/"
 
 # mysql
 alias mysql="/usr/local/mysql/bin/mysql"
