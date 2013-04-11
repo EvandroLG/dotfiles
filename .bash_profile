@@ -1,3 +1,6 @@
+# aliases
+alias sourceprofile="source ~/.bash_profile"
+
 # softwares
 alias mate="open -a TextMate.app"
 
