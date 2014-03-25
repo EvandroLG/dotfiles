@@ -38,4 +38,3 @@ source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.s
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 source /usr/local/bin/virtualenvwrapper.sh
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
