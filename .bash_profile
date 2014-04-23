@@ -4,6 +4,7 @@ sudo () { ( unset LD_LIBRARY_PATH DYLD_LIBRARY_PATH; exec command sudo $* ) }
 # aliases
 alias sourceprofile="source ~/.bash_profile"
 alias ll="ls -lah"
+alias findfile="grep | file"
 
 # softwares
 alias subl="open -a /Applications/Sublime\ Text\ 2.app/"
