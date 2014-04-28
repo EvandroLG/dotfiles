@@ -25,6 +25,9 @@ export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 alias pyclean='find . -name "*.pyc" -exec rm {} \;'
 alias pipuninstallall="pip freeze | xargs pip uninstall -y"
 
+# scala
+export PATH=/Applications/sbt/bin:$PATH
+
 # node
 alias npmclean='npm -g ls | grep -v "npm@" | awk "/@/ {print $2}" | awk -F@ "{print $1}" | xargs npm -g rm'
 
