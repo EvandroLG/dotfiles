@@ -28,6 +28,7 @@ alias pipuninstallall="pip freeze | xargs pip uninstall -y"
 
 # scala
 export PATH=/Applications/sbt/bin:$PATH
+alias scala=sbt console
 
 # node
 alias npmclean='npm -g ls | grep -v "npm@" | awk "/@/ {print $2}" | awk -F@ "{print $1}" | xargs npm -g rm'
