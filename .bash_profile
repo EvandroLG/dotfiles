@@ -6,6 +6,8 @@ alias sourceprofile="source ~/.bash_profile"
 alias ll="ls -lah"
 alias findfile="find | grep"
 alias edithosts="vim /etc/hosts"
+alias ..='cd ..'
+alias apt-get='sudo apt-get'
 
 # softwares
 alias subl="open -a /Applications/Sublime\ Text\ 2.app/"
