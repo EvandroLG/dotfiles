@@ -1,6 +1,3 @@
-# fix to problem with sudo on mountain lion
-sudo () { ( unset LD_LIBRARY_PATH DYLD_LIBRARY_PATH; exec command sudo $* ) }
-
 # aliases
 alias sourceprofile="source ~/.bash_profile"
 alias ll="ls -lah"
@@ -8,9 +5,6 @@ alias findfile="find | grep"
 alias edithosts="vim /etc/hosts"
 alias ..='cd ..'
 alias apt-get='sudo apt-get'
-
-# softwares
-alias subl="open -a /Applications/Sublime\ Text\ 2.app/"
 
 # mysql
 alias mysql="/usr/local/mysql/bin/mysql"
@@ -27,6 +21,8 @@ export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 # python
 alias pyclean='find . -name "*.pyc" -exec rm {} \;'
 alias pipuninstallall="pip freeze | xargs pip uninstall -y"
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+source /usr/local/bin/virtualenvwrapper.sh
 
 # scala
 export PATH=/Applications/sbt/bin:$PATH
@@ -48,4 +44,3 @@ export PATH
 source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-source /usr/local/bin/virtualenvwrapper.sh
