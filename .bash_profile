@@ -5,6 +5,7 @@ alias findfile="find | grep"
 alias edithosts="vim /etc/hosts"
 alias ..='cd ..'
 alias apt-get='sudo apt-get'
+alias dirsubl="/Users/evandro/Library/Application\ Support/Sublime\ Text\ 3/"
 
 # mysql
 alias mysql="/usr/local/mysql/bin/mysql"
