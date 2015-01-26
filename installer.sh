@@ -5,13 +5,13 @@ RED="\033[0;31m"
 GREEN="\033[0;32m"
 NC="\033[0m"
 
+PLATAFORM=`uname`
+
 function vim_install() {
   echo -e "Installing ${YELLOW}vim${NC} plugins...\n"
 
-  # install janus
   curl -Lo- https://bit.ly/janus-bootstrap | bash
 
-  # install my favorites plugins
   if [ ! -d ~/.vim/autoload ]; then
     mkdir -p ~/.vim/autoload ~/.vim/bundle && \
           curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -20,7 +20,6 @@ function vim_install() {
     git clone https://github.com/walm/jshint.vim ~/.vim/bundle/jshint.vim
   fi
 
-  # update ~/.vimrc
   echo -e "Updating my ${GREEN}.vimrc${NC}\n"
   curl -o ~/.vimrc https://raw.githubusercontent.com/EvandroLG/dotfiles/master/vim/.vimrc
 
@@ -44,16 +43,15 @@ function git_install() {
 }
 
 function profile_update() {
-  unamestr=`uname`
 
-  if [[ "$unamestr" == "Darwin" ]]; then
+  if [[ "$PLATAFORM" == "Darwin" ]]; then
     echo -e "Downloading ${YELLOW}.bash_profile${NC}...\n"
     curl -o ~/.bash_profile https://raw.githubusercontent.com/EvandroLG/dotfiles/master/.bash_profile
-    echo -e "My ${YELLOW}.bash_profile${NC} is updated!"
-  elif [[ "$unamestr" == "Linux"  ]]; then
+    echo -e "\nMy ${YELLOW}.bash_profile${NC} is updated!"
+  elif [[ "$PLATAFORM" == "Linux"  ]]; then
     echo -e "Downloading ${YELLOW}.bashrc${NC}...\n"
     curl -o ~/.bashrc https://raw.githubusercontent.com/EvandroLG/dotfiles/master/.bashrc
-    echo -e "My ${YELLOW}.bashrc${NC} is updated!"
+    echo -e "\nMy ${YELLOW}.bashrc${NC} is updated!"
   fi
 }
 
