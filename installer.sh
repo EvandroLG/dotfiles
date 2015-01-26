@@ -20,9 +20,8 @@ function vim_install() {
   fi
 
   # update ~/.vimrc
-  if [ ! -f ~/.vimrc ]; then
-    curl -o ~/.vimrc https://raw.githubusercontent.com/EvandroLG/dotfiles/master/vim/.vimrc
-  fi
+  echo -e "Updating my ${GREEN}.vimrc${NC}\n"
+  curl -o ~/.vimrc https://raw.githubusercontent.com/EvandroLG/dotfiles/master/vim/.vimrc
 
   echo -e "\n${GREEN}vim${NC} plugins were installed!"
 }
