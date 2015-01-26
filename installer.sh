@@ -40,6 +40,6 @@ function git_install() {
   fi
 }
 
-#vim_install
+vim_install
 git_install
 
