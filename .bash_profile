@@ -1,11 +1,8 @@
 # aliases
 alias sourceprofile="source ~/.bash_profile"
 alias ll="ls -lah"
-alias findfile="find | grep"
 alias edithosts="vim /etc/hosts"
 alias ..='cd ..'
-alias apt-get='sudo apt-get'
-alias dirsubl="/Users/evandro/Library/Application\ Support/Sublime\ Text\ 3/"
 
 #postgres
 alias psql="/Applications/Postgres93.app/Contents/MacOS/bin/psql"
