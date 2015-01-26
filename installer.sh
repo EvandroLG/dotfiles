@@ -34,12 +34,29 @@ function git_install() {
     curl -o ~/.gitconfig https://raw.githubusercontent.com/EvandroLG/dotfiles/master/git/.gitconfig
     curl -o ~/.gitignore https://raw.githubusercontent.com/EvandroLG/dotfiles/master/git/.gitignore
 
-    echo -e "\n${YELLOW}git${NC} files were updated!"
+    echo -e "\n${YELLOW}git${NC} files were updated!\n"
+    echo -e "Downloading ${YELLOW}git-completion${NC}..."
+
+    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
   else
       echo -e "${YELLOW}git${NC} is not installed!"
   fi
 }
 
+function profile_update() {
+  unamestr=`uname`
+
+  if [[ "$unamestr" == "Darwin" ]]; then
+    echo -e "Downloading ${YELLOW}.bash_profile${NC}...\n"
+    curl -o ~/.bash_profile https://raw.githubusercontent.com/EvandroLG/dotfiles/master/.bash_profile
+    echo -e "My ${YELLOW}.bash_profile${NC} is updated!"
+  elif [[ "$unamestr" == "Linux"  ]]; then
+    echo -e "Downloading ${YELLOW}.bashrc${NC}...\n"
+    curl -o ~/.bashrc https://raw.githubusercontent.com/EvandroLG/dotfiles/master/.bashrc
+    echo -e "My ${YELLOW}.bashrc${NC} is updated!"
+  fi
+}
+
 vim_install
 git_install
-
+profile_update
