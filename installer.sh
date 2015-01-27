@@ -43,7 +43,6 @@ function git_install() {
 }
 
 function profile_update() {
-
   if [[ "$PLATAFORM" == "Darwin" ]]; then
     echo -e "Downloading ${YELLOW}.bash_profile${NC}...\n"
     curl -o ~/.bash_profile https://raw.githubusercontent.com/EvandroLG/dotfiles/master/.bash_profile
@@ -55,6 +54,21 @@ function profile_update() {
   fi
 }
 
+function install_node() {
+  if type node > /dev/null; then
+    echo -e "Installing ${YELLOW}node${NC}...\n"
+
+    git clone git://github.com/ry/node.git
+    cd node
+    ./configure
+    make
+    sudo make install
+
+    echo -e "${YELLOW}node${NC} was installed!"
+  fi
+}
+
 vim_install
 git_install
 profile_update
+install_node
