@@ -55,7 +55,7 @@ function profile_update() {
 }
 
 function install_node() {
-  if type node > /dev/null; then
+  if ! type node > /dev/null; then
     echo -e "Installing ${YELLOW}node${NC}...\n"
 
     git clone git://github.com/ry/node.git
