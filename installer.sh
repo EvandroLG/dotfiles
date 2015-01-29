@@ -59,10 +59,7 @@ function install_node() {
     echo -e "Installing ${YELLOW}node${NC}...\n"
 
     git clone git://github.com/ry/node.git
-    cd node
-    ./configure
-    make
-    sudo make install
+    ./node/configure && make && sudo make install
 
     echo -e "${YELLOW}node${NC} was installed!"
   fi

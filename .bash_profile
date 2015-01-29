@@ -11,9 +11,10 @@ export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 # python
 alias pyclean='find . -name "*.pyc" -exec rm {} \;'
 alias pipuninstallall="pip freeze | xargs pip uninstall -y"
-PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
-export PATH
-# set virtualenv
+
+#virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
 
 # node
@@ -26,7 +27,6 @@ export PS1='\[\033[01;32m\]\u\[\033[01;31m\]\w\[\033[00m\]$(git branch &>/dev/nu
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-source /usr/local/bin/virtualenvwrapper.sh
 
 # git
 if [ -f ~/.git-completion.bash ]; then
