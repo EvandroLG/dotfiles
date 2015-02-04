@@ -65,7 +65,15 @@ function install_node() {
   fi
 }
 
+function install_nginx() {
+  curl http://nginx.org/download/nginx-1.6.0.tar.gz -o ~/nginx-1.6.0.tar.gz
+  tar xvf ~/nginx-1.6.0.tar.gz && cd ~/nginx-1.6.0/
+  sh ./configure --with-cc-opt="-Wno-deprecated-declarations" --with-http_ssl_module
+  make && make install
+}
+
 vim_install
 git_install
 profile_update
 install_node
+nginx
