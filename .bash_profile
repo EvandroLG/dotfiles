@@ -32,3 +32,6 @@ eval "$(rbenv init -)"
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+ #nginx
+ export PATH="/usr/local/nginx/sbin:$PATH"
