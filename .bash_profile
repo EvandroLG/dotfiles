@@ -4,7 +4,7 @@ alias ll="ls -lah"
 alias edithosts="vim /etc/hosts"
 alias ..='cd ..'
 
-#postgres
+# postgres
 alias psql="/Applications/Postgres93.app/Contents/MacOS/bin/psql"
 export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 
@@ -12,7 +12,7 @@ export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 alias pyclean='find . -name "*.pyc" -exec rm {} \;'
 alias pipuninstallall="pip freeze | xargs pip uninstall -y"
 
-#virtualenv
+# virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
@@ -33,5 +33,6 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
- #nginx
- export PATH="/usr/local/nginx/sbin:$PATH"
+# nginx
+export PATH="/usr/local/nginx/sbin:$PATH"
+nginx_conf=/usr/local/nginx/conf/nginx.conf
