@@ -35,4 +35,4 @@ fi
 
 # nginx
 export PATH="/usr/local/nginx/sbin:$PATH"
-nginx_conf=/usr/local/nginx/conf/nginx.conf
+alias nginx_conf=/usr/local/nginx/conf/nginx.conf
