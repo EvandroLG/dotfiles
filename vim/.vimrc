@@ -48,4 +48,18 @@ let NERDTreeShowHidden=1
 " Set auto-indenting for code paste
 set pastetoggle=<F2>
 
+" Set refresh
+ set autoread
+ 
+ " It's just a handy trick to automatically load the .vimrc file when I save it
+ au BufWritePost .vimrc so $MYVIMRC
+ 
+ " Improve vim's scrolling speed
+ set ttyfast
+ set ttyscroll=3
+ set lazyredraw
+ 
+ set wildmenu " show completion on the mode-line
+ set linespace=0.
+
 " .vimrc.after is loaded after the plugins have loaded
