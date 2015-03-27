@@ -54,6 +54,9 @@ set pastetoggle=<F2>
  " It's just a handy trick to automatically load the .vimrc file when I save it
  au BufWritePost .vimrc so $MYVIMRC
  
+ " Set mouse on
+ set mouse=a
+ 
  " Improve vim's scrolling speed
  set ttyfast
  set ttyscroll=3
