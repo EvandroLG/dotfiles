@@ -1,68 +1,55 @@
-""
-"" Janus setup
-""
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" Define paths
-let g:janus_path = escape(fnamemodify(resolve(expand("<sfile>:p")), ":h"), ' ')
-let g:janus_vim_path = escape(fnamemodify(resolve(expand("<sfile>:p" . "vim")), ":h"), ' ')
-let g:janus_custom_path = expand("~/.janus")
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Source janus's core
-exe 'source ' . g:janus_vim_path . '/core/before/plugin/janus.vim'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'The-NERD-Commenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
 
-" You should note that groups will be processed by Pathogen in reverse
-" order they were added.
-call janus#add_group("tools")
-call janus#add_group("langs")
-call janus#add_group("colors")
+call vundle#end() " required
+filetype plugin indent on " required
 
-""
-"" Customisations
-""
+syntax enable
 
-if filereadable(expand("~/.vimrc.before"))
-  source ~/.vimrc.before
-endif
+set cursorline
+set mouse=a " set mouse on
+set pastetoggle=<F2> " set auto-indenting for code paste
+set autoread " set refresh
+set paste
+set wildmenu " show completion on the mode-line
+set hlsearch "highlight search things
+set linespace=0.
+set encoding=utf-8
+set smartcase
+set ignorecase
+set nobackup
+set noswapfile
+set nowritebackup
+set number
+set expandtab
 
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype css setlocal ts=4 sts=4 sw=2
+autocmd Filetype javascript setlocal ts=8 sts=4 sw=2
+autocmd Filetype python setlocal ts=8 sts=4 sw=4
+autocmd Filetype lua setlocal ts=2 sts=2 sw=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
-" Disable plugins prior to loading pathogen
-exe 'source ' . g:janus_vim_path . '/core/plugins.vim'
+" It's just a handy trick to automatically load the .vimrc file when I save it
+"au BufWritePost .vimrc so $MYVIMRC
 
-""
-"" Pathogen setup
-""
+" Add full file path to your existing statusline
+set statusline+=%F
 
-" Load all groups, custom dir, and janus core
-call janus#load_pathogen()
+" Improve vim's scrolling speed
+set ttyfast
+set ttyscroll=3
+set lazyredraw
 
-" Load plugin
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
-
-" Load NERDTree
+" NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let NERDTreeShowHidden=1
-
-" Set auto-indenting for code paste
-set pastetoggle=<F2>
-
-" Set refresh
- set autoread
- 
- " It's just a handy trick to automatically load the .vimrc file when I save it
- au BufWritePost .vimrc so $MYVIMRC
- 
- " Set mouse on
- set mouse=a
- 
- " Improve vim's scrolling speed
- set ttyfast
- set ttyscroll=3
- set lazyredraw
- 
- set wildmenu " show completion on the mode-line
- set linespace=0.
-
-" .vimrc.after is loaded after the plugins have loaded
