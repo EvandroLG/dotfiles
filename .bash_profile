@@ -33,6 +33,7 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-# nginx
+#nginx
 export PATH="/usr/local/nginx/sbin:$PATH"
-alias nginx_conf=/usr/local/nginx/conf/nginx.conf
+alias nginx_stop="nginx -s stop"
+alias nginx_start="nginx -c /usr/local/nginx/conf/nginx.conf"
