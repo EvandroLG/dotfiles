@@ -4,6 +4,10 @@ alias ll="ls -lah"
 alias edithosts="vim /etc/hosts"
 alias ..='cd ..'
 
+# default
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # postgres
 alias psql="/Applications/Postgres93.app/Contents/MacOS/bin/psql"
 export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
