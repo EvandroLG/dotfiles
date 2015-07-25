@@ -20,7 +20,9 @@ set mouse=a " set mouse on
 set pastetoggle=<F2> " set auto-indenting for code paste
 set autoread " set refresh
 set paste
+set clipboard=unnamedplus
 set wildmenu " show completion on the mode-line
+set incsearch
 set hlsearch "highlight search things
 set linespace=0.
 set encoding=utf-8
@@ -30,25 +32,27 @@ set nobackup
 set noswapfile
 set nowritebackup
 set number
-set expandtab
-
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype css setlocal ts=4 sts=4 sw=2
-autocmd Filetype javascript setlocal ts=8 sts=4 sw=2
-autocmd Filetype python setlocal ts=8 sts=4 sw=4
-autocmd Filetype lua setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-
-" It's just a handy trick to automatically load the .vimrc file when I save it
-"au BufWritePost .vimrc so $MYVIMRC
-
-" Add full file path to your existing statusline
-set statusline+=%F
+set statusline+=%F " add full file path to your existing statusline
 
 " Improve vim's scrolling speed
 set ttyfast
 set ttyscroll=3
 set lazyredraw
+
+" Indentetion
+set autoindent
+set expandtab
+set ts=4
+set sw=4
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype css setlocal ts=4 sts=4 sw=2
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype python setlocal ts=8 sts=4 sw=4
+autocmd Filetype lua setlocal ts=2 sts=2 sw=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+
+imap <c-e> &amp;
+abbr html5% <!doctype html><cr><html><cr><head><cr><title></title><cr></head><cr><body></body><cr></html>
 
 " NERDTree
 autocmd StdinReadPre * let s:std_in=1
