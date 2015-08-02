@@ -12,6 +12,9 @@ export EDITOR="$VISUAL"
 alias psql="/Applications/Postgres93.app/Contents/MacOS/bin/psql"
 export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 
+# mongodb
+export PATH="$HOME/mongodb/bin:$PATH"
+
 # python
 alias pyclean='find . -name "*.pyc" -exec rm {} \;'
 alias pipuninstallall="pip freeze | xargs pip uninstall -y"
