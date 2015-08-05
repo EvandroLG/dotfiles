@@ -68,7 +68,7 @@ function install_node() {
 function install_nginx() {
   curl http://nginx.org/download/nginx-1.6.0.tar.gz -o ~/nginx-1.6.0.tar.gz
   tar xvf ~/nginx-1.6.0.tar.gz && cd ~/nginx-1.6.0/
-  sh ./configure --with-cc-opt="-Wno-deprecated-declarations" --with-http_ssl_module
+  sh ./configure --with-cc-opt="-Wno-deprecated-declarations" --with-http_ssl_module --with-pcre=/usr/local/pcre
   make && make install
 }
 
