@@ -35,6 +35,9 @@ export PS1='\[\033[01;32m\]\u\[\033[01;31m\]\w\[\033[00m\]$(git branch &>/dev/nu
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# perl
+export PATH=/usr/local/pcre/bin:$PATH
+
 # git
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
