@@ -47,3 +47,7 @@ fi
 export PATH="/usr/local/nginx/sbin:$PATH"
 alias nginx_stop="nginx -s stop"
 alias nginx_start="nginx -c /usr/local/nginx/conf/nginx.conf"
+
+# openresty
+alias openresty_stop="/usr/local/openresty/nginx/sbin/nginx -s stop"
+alias openresty_start="/usr/local/openresty/nginx/sbin/nginx -c /usr/local/etc/openresty/nginx.conf"
