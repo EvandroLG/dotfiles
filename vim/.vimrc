@@ -9,6 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'The-NERD-Commenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
+Plugin 'https://github.com/kien/ctrlp.vim'
 
 call vundle#end() " required
 filetype plugin indent on " required
@@ -16,6 +17,7 @@ filetype plugin indent on " required
 syntax enable
 
 set cursorline
+set showcmd " show command in bottom bar
 set mouse=a " set mouse on
 set pastetoggle=<F2> " set auto-indenting for code paste
 set autoread " set refresh
@@ -31,6 +33,7 @@ set noswapfile
 set nowritebackup
 set number
 set statusline+=%F " add full file path to your existing statusline
+set showmatch " highlight matching [{()}]
 
 " improve vim's scrolling speed
 set ttyfast
@@ -40,21 +43,26 @@ set lazyredraw
 " indentetion
 set autoindent
 set expandtab
-set ts=4
-set sw=4
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype css setlocal ts=4 sts=4 sw=2
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+set ts=2
+set sw=2
+set sts=2
+filetype indent on " load filetype-specific indent files
 autocmd Filetype python setlocal ts=8 sts=4 sw=4
-autocmd Filetype lua setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 vmap <C-x> :!pbcopy<CR> 
 vmap <C-c> :w !pbcopy<CR><CR> 
 imap <c-e> &amp;
 abbr html5% <!doctype html><cr><html><cr><head><cr><title></title><cr></head><cr><body></body><cr></html>
 abbr js% (function(doc, global) {<cr><cr>'use strict';<cr><cr>}(document, window));
+abbr utf8py% # -*- coding: utf-8 -*-
+abbr importpdb% import pdb; pdb.set_trace()
 
 " NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
