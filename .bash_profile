@@ -3,6 +3,7 @@ alias sourceprofile="source ~/.bash_profile"
 alias ll="ls -lah"
 alias edithosts="vim /etc/hosts"
 alias ..='cd ..'
+alias vim_plugin_install="vim +PluginInstall +qall"
 
 # default
 export VISUAL=vim
