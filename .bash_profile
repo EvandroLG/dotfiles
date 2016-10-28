@@ -9,6 +9,10 @@ alias vim_plugin_install="vim +PluginInstall +qall"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# colors
+export LSCOLORS='DxGxcxdxCxegedabagacad'
+export PS1='\[\033[01;32m\]\u\[\033[01;31m\]\w\[\033[00m\]$(git branch &>/dev/null; if [ $? -eq 0 ]; then echo "\[\033[01;33m\] ($(git branch | grep ^*|sed s/\*\ //))\[\033[00m\]"; fi) $ '
+
 # postgres
 alias psql="/Applications/Postgres93.app/Contents/MacOS/bin/psql"
 export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
@@ -28,13 +32,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 # node
 alias npmclean='npm -g ls | grep -v "npm@" | awk "/@/ {print $2}" | awk -F@ "{print $1}" | xargs npm -g rm'
 
-# colors
-export LSCOLORS='DxGxcxdxCxegedabagacad'
-export PS1='\[\033[01;32m\]\u\[\033[01;31m\]\w\[\033[00m\]$(git branch &>/dev/null; if [ $? -eq 0 ]; then echo "\[\033[01;33m\] ($(git branch | grep ^*|sed s/\*\ //))\[\033[00m\]"; fi) $ '
-
-# ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # perl
 export PATH=/usr/local/pcre/bin:$PATH
@@ -44,11 +43,5 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-#nginx
-export PATH="/usr/local/nginx/sbin:$PATH"
-alias nginx_stop="nginx -s stop"
-alias nginx_start="nginx -c /usr/local/nginx/conf/nginx.conf"
-
-# openresty
-alias openresty_stop="/usr/local/openresty/nginx/sbin/nginx -s stop"
-alias openresty_start="/usr/local/openresty/nginx/sbin/nginx -c /usr/local/etc/openresty/nginx.conf"
+# heroku
+PATH="/usr/local/heroku/bin:$PATH"
