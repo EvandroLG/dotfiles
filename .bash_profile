@@ -1,6 +1,6 @@
 # aliases
 alias source_profile="source ~/.bash_profile"
-alias source_tmux="tmux source-file .tmux.conf"
+alias source_tmux="tmux source-file ~/.tmux.conf"
 alias ll="ls -lah"
 alias edit_hosts="vim /etc/hosts"
 alias ..='cd ..'
