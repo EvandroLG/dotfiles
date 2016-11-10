@@ -1,7 +1,8 @@
 # aliases
-alias sourceprofile="source ~/.bash_profile"
+alias source_profile="source ~/.bash_profile"
+alias source_tmux="tmux source-file .tmux.conf"
 alias ll="ls -lah"
-alias edithosts="vim /etc/hosts"
+alias edit_hosts="vim /etc/hosts"
 alias ..='cd ..'
 alias vim_plugin_install="vim +PluginInstall +qall"
 
@@ -25,9 +26,9 @@ alias pyclean='find . -name "*.pyc" -exec rm {} \;'
 alias pipuninstallall="pip freeze | xargs pip uninstall -y"
 
 # virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+#export WORKON_HOME=$HOME/.virtualenvs
+#export PROJECT_HOME=$HOME/Devel
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # node
 alias npmclean='npm -g ls | grep -v "npm@" | awk "/@/ {print $2}" | awk -F@ "{print $1}" | xargs npm -g rm'
