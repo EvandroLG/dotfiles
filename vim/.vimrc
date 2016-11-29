@@ -9,7 +9,9 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'The-NERD-Commenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
+Plugin 'mru.vim'
 Plugin 'https://github.com/kien/ctrlp.vim'
+
 
 call vundle#end() " required
 filetype plugin indent on " required
@@ -49,8 +51,8 @@ set sts=2
 filetype indent on " load filetype-specific indent files
 autocmd Filetype python setlocal ts=8 sts=4 sw=4
 
-vmap <C-x> :!pbcopy<CR> 
-vmap <C-c> :w !pbcopy<CR><CR> 
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
 imap <c-e> &amp;
 abbr html5% <!doctype html><cr><html><cr><head><cr><title></title><cr></head><cr><body></body><cr></html>
 abbr js% (function(doc, global) {<cr><cr>'use strict';<cr><cr>}(document, window));
