@@ -10,8 +10,11 @@ Plugin 'The-NERD-Commenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mru.vim'
-Plugin 'https://github.com/kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 call vundle#end() " required
 filetype plugin indent on " required
@@ -44,12 +47,8 @@ set lazyredraw
 
 " indentetion
 set autoindent
-set expandtab
-set ts=2
-set sw=2
-set sts=2
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 filetype indent on " load filetype-specific indent files
-autocmd Filetype python setlocal ts=8 sts=4 sw=4
 
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
