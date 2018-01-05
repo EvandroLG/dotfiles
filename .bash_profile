@@ -7,10 +7,6 @@ alias edit_hosts="vim /etc/hosts"
 alias ..='cd ..'
 alias vim_plugin_install="vim +PluginInstall +qall"
 
-# alias nutrebem
-alias heroku_production="heroku vim --app nutrebem-production"
-alias heroku_staging="heroku vim --app nutrebem-staging"
-
 # default
 export VISUAL=vim
 export EDITOR="$VISUAL"
