@@ -71,3 +71,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
+
+# opevpn
+export PATH=$(brew --prefix openvpn)/sbin:$PATH
