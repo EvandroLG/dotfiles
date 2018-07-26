@@ -7,7 +7,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'The-NERD-Commenter'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mru.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -39,15 +39,16 @@ set nowritebackup
 set number
 set statusline+=%F " add full file path to your existing statusline
 set showmatch " highlight matching [{()}]
+set lcs=tab:▸\ ,trail:· " show 'invisible' characters
+set ttyfast ttyscroll=3 lazyredraw " improve vim's scrolling speed
+set clipboard=unnamedplus " use OS clipboard by default
 
-" improve vim's scrolling speed
-set ttyfast
-set ttyscroll=3
-set lazyredraw
+" remove blank spaces
+nmap <silent><Leader>s <Esc>:%s/\s\+$//g<CR>"
 
 " indentetion
 set autoindent
-set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 filetype indent on " load filetype-specific indent files
 
 vmap <C-x> :!pbcopy<CR>
@@ -61,6 +62,17 @@ abbr importpdb% import pdb; pdb.set_trace()
 " NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
