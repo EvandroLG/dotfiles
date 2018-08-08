@@ -51,9 +51,12 @@ set autoindent
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 filetype indent on " load filetype-specific indent files
 
-" python abbreviations
+" copy/paste
 vmap <C-x> :!pbcopy<CR>
+nmap <C-a> ggVG:w !pbcopy<CR><CR>
 vmap <C-c> :w !pbcopy<CR><CR>
+
+" python abbreviations
 imap <c-e> &amp;
 abbr utf8py% # -*- coding: utf-8 -*-
 abbr importpdb% import pdb; pdb.set_trace()
