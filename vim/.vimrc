@@ -57,11 +57,11 @@ nmap <C-a> ggVG:w !pbcopy<CR><CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
 " python abbreviations
-imap <c-e> &amp;
 abbr utf8py% # -*- coding: utf-8 -*-
 abbr importpdb% import pdb; pdb.set_trace()
 
 " front-end abbreviations
+imap <c-e> &amp;
 abbr html5% <!doctype html><cr><html><cr><head><cr><title></title><cr></head><cr><body></body><cr></html>
 abbr js% (function(doc, global) {<cr><cr>'use strict';<cr><cr>}(document, window));
 abbr react% import React from 'react';<cr><cr>class MyClass extends React.Component {render(){<cr>}<cr>}
