@@ -51,13 +51,17 @@ set autoindent
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 filetype indent on " load filetype-specific indent files
 
+" python abbreviations
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 imap <c-e> &amp;
-abbr html5% <!doctype html><cr><html><cr><head><cr><title></title><cr></head><cr><body></body><cr></html>
-abbr js% (function(doc, global) {<cr><cr>'use strict';<cr><cr>}(document, window));
 abbr utf8py% # -*- coding: utf-8 -*-
 abbr importpdb% import pdb; pdb.set_trace()
+
+" front-end abbreviations
+abbr html5% <!doctype html><cr><html><cr><head><cr><title></title><cr></head><cr><body></body><cr></html>
+abbr js% (function(doc, global) {<cr><cr>'use strict';<cr><cr>}(document, window));
+abbr react% import React from 'react';<cr><cr>class MyClass extends React.Component {render(){<cr>}<cr>}
 
 " NERDTree
 autocmd StdinReadPre * let s:std_in=1
