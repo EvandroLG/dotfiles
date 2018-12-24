@@ -63,11 +63,11 @@ vmap <C-c> :w !pbcopy<CR><CR>
 abbr utf8py% # -*- coding: utf-8 -*-
 abbr importpdb% import pdb; pdb.set_trace()
 
-" front-end abbreviations
+" snippets
 imap <c-e> &amp;
-abbr html5% <!doctype html><cr><html><cr><head><cr><title></title><cr></head><cr><body></body><cr></html>
-abbr js% (function(doc, global) {<cr><cr>'use strict';<cr><cr>}(document, window));
-abbr react% import React from 'react';<cr><cr>class MyClass extends React.Component {<cr>render() {<cr>}<cr>}
+nnoremap %html :-1read $HOME/.vim/snippets/.html5.html<CR>
+nnoremap %js_w :-1read $HOME/.vim/snippets/.js_wrapper.js<CR>
+nnoremap %c :-1read $HOME/.vim/snippets/.c.c<CR>
 
 " NERDTree
 autocmd StdinReadPre * let s:std_in=1
