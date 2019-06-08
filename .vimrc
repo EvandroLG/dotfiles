@@ -7,10 +7,10 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'The-NERD-Commenter'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mru.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'w0rp/ale'
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -52,6 +52,10 @@ nmap <silent><Leader>s <Esc>:%s/\s\+$//g<CR>"
 " indentetion
 set autoindent
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+:autocmd Filetype ruby set softtabstop=2 sw=2 ts=2
+:autocmd Filetype lua set softtabstop=2 sw=2 ts=2
+:autocmd Filetype javascript set softtabstop=2 sw=2 ts=2
+
 filetype indent on " load filetype-specific indent files
 
 " copy/paste
@@ -63,7 +67,7 @@ vmap <C-c> :w !pbcopy<CR><CR>
 abbr utf8py% # -*- coding: utf-8 -*-
 abbr importpdb% import pdb; pdb.set_trace()
 
-" snippets
+" front-end abbreviations
 imap <c-e> &amp;
 nnoremap %html :-1read $HOME/.vim/snippets/.html5.html<CR>
 nnoremap %js_w :-1read $HOME/.vim/snippets/.js_wrapper.js<CR>
@@ -74,17 +78,10 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_working_path_mode = 'c'
+
+" ALE
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
