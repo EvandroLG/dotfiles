@@ -49,6 +49,10 @@ set lcs=tab:▸\ ,trail:· " show 'invisible' characters
 set ttyfast ttyscroll=3 lazyredraw " improve vim's scrolling speed
 set clipboard=unnamedplus " use OS clipboard by default
 
+" highlight trailing whitespaces
+highlight RedundantSpaces ctermbg=red guibg=red
+match RedundantSpaces /\s\+$/
+
 " create the 'tags' file
 command! MakeTags !ctags -R .
 
@@ -102,7 +106,7 @@ let g:ale_linters = {
 
 let b:ale_fixers = {
     \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-    \   'javascript': ['prettier']
+    \   'javascript': ['prettier','remove_trailing_lines', 'trim_whitespace']
 \}
 
 highlight link ALEWarningSign String
@@ -114,4 +118,3 @@ let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_removed_first_line = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
-autocmd BufWritePost * GitGutter
