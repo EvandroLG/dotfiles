@@ -6,11 +6,17 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'The-NERD-Commenter'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mru.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'w0rp/ale'
+set rtp+=/usr/local/opt/fzf
+Plugin 'junegunn/fzf.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'itchyny/lightline.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -52,9 +58,7 @@ nmap <silent><Leader>s <Esc>:%s/\s\+$//g<CR>"
 " indentetion
 set autoindent
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
-:autocmd Filetype ruby set softtabstop=2 sw=2 ts=2
-:autocmd Filetype lua set softtabstop=2 sw=2 ts=2
-:autocmd Filetype javascript set softtabstop=2 sw=2 ts=2
+:set softtabstop=2 sw=2 ts=2
 
 filetype indent on " load filetype-specific indent files
 
@@ -83,5 +87,31 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_working_path_mode = 'c'
 
 " ALE
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_insert_leave = 1
+let g:ale_sign_warning = '▲'
+let g:ale_sign_error = '✗'
+let g:ale_fix_on_save = 1
+highlight link ALEWarningSign String
+highlight link ALEErrorSign Title
+
+let g:ale_linters = {
+    \   'javascript': ['eslint'],
+\}
+
+let b:ale_fixers = {
+    \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \   'javascript': ['prettier']
+\}
+
+highlight link ALEWarningSign String
+highlight link ALEErrorSign Title
+
+" gitgutter
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_removed_first_line = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
+autocmd BufWritePost * GitGutter
