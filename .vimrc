@@ -11,13 +11,14 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'mru.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'w0rp/ale'
-set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
 Plugin 'junegunn/fzf.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive.git'
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -44,7 +45,7 @@ set nobackup
 set noswapfile
 set nowritebackup
 set number
-set statusline+=%F " add full file path to your existing statusline
+"set statusline+=%F " add full file path to your existing statusline
 set showmatch " highlight matching [{()}]
 set lcs=tab:▸\ ,trail:· " show 'invisible' characters
 set ttyfast ttyscroll=3 lazyredraw " improve vim's scrolling speed
