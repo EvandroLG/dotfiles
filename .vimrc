@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+tset nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -17,6 +17,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'mileszs/ack.vim'
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -112,9 +113,7 @@ let b:ale_fixers = {
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 
-" gitgutter
-let g:gitgutter_sign_added = '∙'
-let g:gitgutter_sign_modified = '∙'
-let g:gitgutter_sign_removed = '∙'
-let g:gitgutter_sign_removed_first_line = '∙'
-let g:gitgutter_sign_modified_removed = '∙'
+" Ack
+let g:ackprg = 'ag --vimgrep'
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
