@@ -1,33 +1,20 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'mru.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'w0rp/ale'
-set rtp+=/usr/local/opt/fzf
-Plugin 'junegunn/fzf.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'itchyny/lightline.vim'
-Plugin 'mxw/vim-jsx'
-Plugin 'mileszs/ack.vim'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'morhetz/gruvbox'
-
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
-call vundle#end() " required
-filetype plugin indent on " required
-
-syntax enable
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'gmarik/Vundle.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-scripts/mru.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'w0rp/ale'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
+Plug 'mxw/vim-jsx'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
 
 let g:gruvbox_contrast_dark='hard'
 color gruvbox
@@ -39,7 +26,6 @@ set autoread " set refresh
 set wildmenu " show completion on the mode-line
 set incsearch
 set hlsearch "highlight search things
-set linespace=0.
 set encoding=utf-8
 set smartcase
 set ignorecase
@@ -50,8 +36,7 @@ set number
 set statusline+=%F " add full file path to your existing statusline
 set showmatch " highlight matching [{()}]
 set lcs=tab:▸\ ,trail:· " show 'invisible' characters
-set ttyfast ttyscroll=3 lazyredraw " improve vim's scrolling speed
-set clipboard=unnamedplus " use OS clipboard by default
+set clipboard+=unnamedplus
 
 " highlight trailing whitespaces
 highlight RedundantSpaces ctermbg=red guibg=red
@@ -66,7 +51,7 @@ nmap <silent><Leader>s <Esc>:%s/\s\+$//g<CR>"
 " indentetion
 set autoindent
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
-:set softtabstop=2 sw=2 ts=2
+set softtabstop=2 sw=2 ts=2
 
 filetype indent on " load filetype-specific indent files
 
@@ -105,12 +90,12 @@ highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 
 let g:ale_linters = {
-    \   'javascript': ['eslint'],
+    \ 'javascript': ['eslint'],
 \}
 
 let b:ale_fixers = {
     \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-    \   'javascript': ['prettier','remove_trailing_lines', 'trim_whitespace']
+    \ 'javascript': ['prettier','remove_trailing_lines', 'trim_whitespace']
 \}
 
 highlight link ALEWarningSign String
