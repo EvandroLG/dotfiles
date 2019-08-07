@@ -1,8 +1,6 @@
 # general aliases
 alias generate_ssh_key="ssh-keygen -t rsa -b 4096 -C 'evandrolgoncalves@gmail.com'"
 alias ll="ls -lah"
-alias vim_plugin_install="vim +PluginInstall +qall"
-alias psql="/Applications/Postgres.app/Contents/Versions/latest/bin/psql"
 alias pyclean='find . -name "*.pyc" -exec rm {} \;'
 alias pipuninstallall="pip freeze | xargs pip uninstall -y"
 alias mysql_local="mysql -u root -p"
@@ -10,6 +8,9 @@ alias npmclean='npm -g ls | grep -v "npm@" | awk "/@/ {print $2}" | awk -F@ "{pr
 alias lua_install='sudo luarocks install'
 alias uninstall_all_gems='for x in `gem list --no-versions`; do gem uninstall $x -a -x -I; done'
 alias source_emcc="source ~/emsdk/emsdk_env.sh --build=Release"
+alias vim="nvim"
+alias vi="nvim"
+alias oldvim="vim"
 
 # default
 export VISUAL=vim
