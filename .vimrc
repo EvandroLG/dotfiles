@@ -14,6 +14,7 @@ Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 let g:gruvbox_contrast_dark='hard'
@@ -37,6 +38,7 @@ set statusline+=%F " add full file path to your existing statusline
 set showmatch " highlight matching [{()}]
 set lcs=tab:▸\ ,trail:· " show 'invisible' characters
 set clipboard+=unnamedplus
+set title
 
 " highlight trailing whitespaces
 highlight RedundantSpaces ctermbg=red guibg=red
@@ -50,25 +52,12 @@ nmap <silent><Leader>s <Esc>:%s/\s\+$//g<CR>"
 
 " indentetion
 set autoindent
-set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
-set softtabstop=2 sw=2 ts=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 filetype indent on " load filetype-specific indent files
-
-" copy/paste
-vmap <C-x> :!pbcopy<CR>
-nmap <C-a> ggVG:w !pbcopy<CR><CR>
-vmap <C-c> :w !pbcopy<CR><CR>
-
-" python abbreviations
-abbr utf8py% # -*- coding: utf-8 -*-
-abbr importpdb% import pdb; pdb.set_trace()
-
-" front-end abbreviations
-imap <c-e> &amp;
-nnoremap %html :-1read $HOME/.vim/snippets/.html5.html<CR>
-nnoremap %js_w :-1read $HOME/.vim/snippets/.js_wrapper.js<CR>
-nnoremap %c :-1read $HOME/.vim/snippets/.c.c<CR>
 
 " NERDTree
 autocmd StdinReadPre * let s:std_in=1
@@ -79,7 +68,21 @@ let NERDTreeShowHidden=1
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_working_path_mode = 'c'
 
+" Ack
+let g:ackprg = 'ag --vimgrep'
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+
 " ALE
+let g:ale_linters = {
+    \ 'javascript': ['eslint'],
+\}
+
+let b:ale_fixers = {
+    \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \ 'javascript': ['prettier','remove_trailing_lines', 'trim_whitespace', 'eslint'],
+\}
+
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 1
@@ -88,20 +91,3 @@ let g:ale_sign_error = '✗'
 let g:ale_fix_on_save = 1
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
-
-let g:ale_linters = {
-    \ 'javascript': ['eslint'],
-\}
-
-let b:ale_fixers = {
-    \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-    \ 'javascript': ['prettier','remove_trailing_lines', 'trim_whitespace']
-\}
-
-highlight link ALEWarningSign String
-highlight link ALEErrorSign Title
-
-" Ack
-let g:ackprg = 'ag --vimgrep'
-cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>
