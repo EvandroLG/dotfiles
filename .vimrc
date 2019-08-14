@@ -23,13 +23,12 @@ set cursorline
 set showcmd " show command in bottom bar
 set mouse=a " set mouse on
 set pastetoggle=<F2> " set auto-indenting for code paste
-set autoread " set refresh
 set wildmenu " show completion on the mode-line
 set incsearch
-set hlsearch "highlight search things
+set hlsearch " highlight search things
 set encoding=utf-8
-set smartcase
-set ignorecase
+set smartcase " if the search string has an upper case letter in it, the search will be case sensitive
+set ignorecase " ignore case when searching
 set nobackup
 set noswapfile
 set nowritebackup
@@ -39,6 +38,8 @@ set showmatch " highlight matching [{()}]
 set lcs=tab:▸\ ,trail:· " show 'invisible' characters
 set clipboard+=unnamedplus
 set title
+set autoread " automatically re-read file if a change was detected
+set nowrap " don't wrap long lines by default
 
 " highlight trailing whitespaces
 highlight RedundantSpaces ctermbg=red guibg=red
