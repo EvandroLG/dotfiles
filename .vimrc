@@ -15,6 +15,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
+Plug 'janko/vim-test'
+Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 let g:gruvbox_contrast_dark='hard'
@@ -40,6 +42,7 @@ set clipboard+=unnamedplus
 set title
 set autoread " automatically re-read file if a change was detected
 set nowrap " don't wrap long lines by default
+set list " show tabs
 
 " highlight trailing whitespaces
 highlight RedundantSpaces ctermbg=red guibg=red
@@ -92,3 +95,13 @@ let g:ale_sign_error = '✗'
 let g:ale_fix_on_save = 1
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
+
+
+" vim-test
+let test#strategy = "dispatch"
+let g:dispatch_compilers = { 'jest': 'jest-cli' }
+let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
+
+nmap <silent> <leader>rr :TestFile<CR>
+nmap <silent> <leader>rn :TestNearest<CR>
+nmap <silent> <leader>c :cclose<CR>
