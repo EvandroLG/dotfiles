@@ -17,9 +17,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'janko/vim-test'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'epilande/vim-react-snippets'
+Plug 'joaohkfaria/vim-jest-snippets'
 call plug#end()
 
 let g:gruvbox_contrast_dark='hard'
