@@ -1,5 +1,4 @@
 # general aliases
-alias generate_ssh_key="ssh-keygen -t rsa -b 4096 -C 'evandrolgoncalves@gmail.com'"
 alias ll="ls -lah"
 alias pyclean='find . -name "*.pyc" -exec rm {} \;'
 alias pipuninstallall="pip freeze | xargs pip uninstall -y"
