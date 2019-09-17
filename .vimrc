@@ -1,9 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'gmarik/Vundle.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/mru.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -16,12 +14,7 @@ Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'janko/vim-test'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'epilande/vim-react-snippets'
-Plug 'joaohkfaria/vim-jest-snippets'
 call plug#end()
 
 let g:gruvbox_contrast_dark='hard'
@@ -73,10 +66,6 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
 
-" CtrlP settings
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_working_path_mode = 'c'
-
 " Ack
 let g:ackprg = 'ag --vimgrep'
 cnoreabbrev Ack Ack!
@@ -100,12 +89,6 @@ let g:ale_sign_error = '✗'
 let g:ale_fix_on_save = 1
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
-
-
-" vim-test
-let test#strategy = "dispatch"
-let g:dispatch_compilers = { 'jest': 'jest-cli' }
-let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
 
 nmap <silent> <leader>rr :TestFile<CR>
 nmap <silent> <leader>rn :TestNearest<CR>
