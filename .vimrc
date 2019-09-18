@@ -15,6 +15,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'janko/vim-test'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ap/vim-css-color', {'for': 'css'}
 call plug#end()
 
 let g:gruvbox_contrast_dark='hard'
