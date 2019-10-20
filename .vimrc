@@ -6,7 +6,6 @@ Plug 'w0rp/ale'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'itchyny/lightline.vim'
 Plug 'mxw/vim-jsx'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
@@ -15,11 +14,16 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'janko/vim-test'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ap/vim-css-color', {'for': 'css'}
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 let g:gruvbox_contrast_dark='hard'
 color gruvbox
+let g:airline_theme='dracula'
+
 set cursorline
 set showcmd " show command in bottom bar
 set mouse=a " set mouse on
