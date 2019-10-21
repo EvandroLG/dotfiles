@@ -18,6 +18,7 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ap/vim-css-color', {'for': 'css'}
 call plug#end()
 
 let g:gruvbox_contrast_dark='hard'
