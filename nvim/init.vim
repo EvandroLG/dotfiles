@@ -2,7 +2,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/mru.vim'
-Plug 'w0rp/ale'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
@@ -50,6 +49,9 @@ set list " show tabs
 highlight RedundantSpaces ctermbg=red guibg=red
 match RedundantSpaces /\s\+$/
 
+" create the 'tags' file
+command! MakeTags !ctags -R .
+
 " remove blank spaces
 nmap <silent><Leader>s <Esc>:%s/\s\+$//g<CR>"
 
@@ -67,8 +69,6 @@ let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-tsserver',
     \ 'coc-tslint',
-    \ 'coc-highlight',
-    \ 'coc-emmet ',
     \ 'coc-snippets',
     \ 'coc-prettier',
 \ ]
@@ -77,6 +77,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <leader>qf <Plug>(coc-fix-current)
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " NERDTree
 autocmd StdinReadPre * let s:std_in=1
@@ -87,25 +90,6 @@ let NERDTreeShowHidden=1
 let g:ackprg = 'ag --vimgrep'
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
-
-" ALE
-let g:ale_linters = {
-    \ 'javascript': ['eslint'],
-\}
-
-let b:ale_fixers = {
-    \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-    \ 'javascript': ['prettier','remove_trailing_lines', 'trim_whitespace', 'eslint'],
-\}
-
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_insert_leave = 1
-let g:ale_sign_warning = '▲'
-let g:ale_sign_error = '✗'
-let g:ale_fix_on_save = 1
-highlight link ALEWarningSign String
-highlight link ALEErrorSign Title
 
 nmap <silent> <leader>rr :TestFile<CR>
 nmap <silent> <leader>rn :TestNearest<CR>
