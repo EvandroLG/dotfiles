@@ -1,0 +1,11 @@
+{
+    "prettier.eslintIntegration": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "javascriptreact",
+        "Markdown"
+    ],
+    "snippets.extends": {
+        "javascriptreact": ["javascript"]
+    }
+}
