@@ -14,11 +14,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'janko/vim-test'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ap/vim-css-color', {'for': 'css'}
 call plug#end()
 
 let g:gruvbox_contrast_dark='hard'
@@ -52,9 +50,6 @@ set list " show tabs
 highlight RedundantSpaces ctermbg=red guibg=red
 match RedundantSpaces /\s\+$/
 
-" create the 'tags' file
-command! MakeTags !ctags -R .
-
 " remove blank spaces
 nmap <silent><Leader>s <Esc>:%s/\s\+$//g<CR>"
 
@@ -66,6 +61,22 @@ set softtabstop=4
 set expandtab
 
 filetype indent on " load filetype-specific indent files
+
+" coc.nvim
+let g:coc_global_extensions = [
+    \ 'coc-json',
+    \ 'coc-tsserver',
+    \ 'coc-tslint',
+    \ 'coc-highlight',
+    \ 'coc-emmet ',
+    \ 'coc-snippets',
+    \ 'coc-prettier',
+\ ]
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " NERDTree
 autocmd StdinReadPre * let s:std_in=1
