@@ -25,8 +25,8 @@
     untracked = cyan
 [core]
     editor = vim
-	autocrlf = input
-	eol = lf
+    autocrlf = input
+    eol = lf
 [alias]
     st = status
     ci = commit
