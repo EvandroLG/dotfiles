@@ -1,28 +1,41 @@
-alias generate_ssh_key="ssh-keygen -t rsa -b 4096 -C 'evandrolgoncalves@gmail.com'"
+#!/bin/bash
+
+export TERM=xterm-256color
+export CLICOLOR=1
+export LSCOLORS=Fafacxdxbxegedabagacad
+export VISUAL=vim
+export EDITOR="$VISUAL"
+export PATH="$HOME/mongodb/bin:$PATH"
+export PATH=/usr/local/pcre/bin:$PATH
+export PATH=$(brew --prefix openvpn)/sbin:$PATH
+
+GREEN=$(tput setaf 2);
+YELLOW=$(tput setaf 3);
+RESET=$(tput sgr0);
+
+function git_branch {
+  # Shows the current branch if in a git repository
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \(\1\)/';
+}
+
+export PS1='${YELLOW}\w${GREEN}$(git_branch)${RESET} $ '
+CDPATH=.:$HOME:$HOME/Projects:$HOME/Desktop
+
+# aliases
+alias ..="cd .."
 alias ll="ls -lah"
-alias npmclean='npm -g ls | grep -v "npm@" | awk "/@/ {print $2}" | awk -F@ "{print $1}" | xargs npm -g rm'
 alias source_emcc="source ~/emsdk/emsdk_env.sh --build=Release"
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
+alias generate_ssh_key="ssh-keygen -t rsa -b 4096 -C 'evandrolgoncalves@gmail.com'"
 
-# default
-export VISUAL=vim
-export EDITOR="$VISUAL"
+# npm aliases
+alias npm_clean='npm -g ls | grep -v "npm@" | awk "/@/ {print $2}" | awk -F@ "{print $1}" | xargs npm -g rm'
+alias npm_update="npm install -g npm"
+alias npm_flush="rm -rf node_modules && npm i"
 
-# settings for the new utf-8 terminal support in sierra
-export LC_CTYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# colors
-export LSCOLORS='DxGxcxdxCxegedabagacad'
-export PS1='\[\033[01;32m\]\w\[\033[00m\]$(git branch &>/dev/null; if [ $? -eq 0 ]; then echo "\[\033[01;33m\] ($(git branch | grep ^*|sed s/\*\ //))\[\033[00m\]"; fi) '
-
-# mongodb
-export PATH="$HOME/mongodb/bin:$PATH"
-
-# perl
-export PATH=/usr/local/pcre/bin:$PATH
-
-# opevpn
-export PATH=$(brew --prefix openvpn)/sbin:$PATH
+# bash completion
+if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+. "$(brew --prefix)/etc/bash_completion"
+fi
