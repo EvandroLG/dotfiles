@@ -1,7 +1,8 @@
 {
     "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact"],
+    "prettier.onlyUseLocalVersion": true,
     "prettier.eslintIntegration": true,
-    "eslint.autoFix": true,
+    "eslint.autoFixOnSave": true,
     "snippets.extends": {
         "javascriptreact": ["javascript"]
     }
