@@ -68,11 +68,12 @@ filetype indent on " load filetype-specific indent files
 let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-tsserver',
-    \ 'coc-tslint',
     \ 'coc-snippets',
     \ 'coc-prettier',
+    \ 'coc-eslint',
 \ ]
 
+nnoremap FF :CocCommand eslint.executeAutofix<Enter>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -82,9 +83,19 @@ nmap <leader>qf <Plug>(coc-fix-current)
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " NERDTree
-autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let NERDTreeShowHidden=1
+
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+    exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+    exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('json', 'LightYellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('js', 'Yellow', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('rb', 'Red', 'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('py', 'Blue', 'none', '#ff00ff', '#151515')
 
 " Ack
 let g:ackprg = 'ag --vimgrep'
