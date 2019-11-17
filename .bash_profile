@@ -8,6 +8,7 @@ export EDITOR="$VISUAL"
 export PATH="$HOME/mongodb/bin:$PATH"
 export PATH=/usr/local/pcre/bin:$PATH
 export PATH=$(brew --prefix openvpn)/sbin:$PATH
+export LC_ALL=en_US.UTF-8
 
 GREEN=$(tput setaf 2);
 YELLOW=$(tput setaf 3);
