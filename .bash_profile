@@ -8,6 +8,7 @@ export EDITOR="$VISUAL"
 export PATH="$HOME/mongodb/bin:$PATH"
 export PATH=/usr/local/pcre/bin:$PATH
 export PATH=$(brew --prefix openvpn)/sbin:$PATH
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude node_modules'
 export LC_ALL=en_US.UTF-8
 
 GREEN=$(tput setaf 2);
