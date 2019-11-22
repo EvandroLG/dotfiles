@@ -83,6 +83,7 @@ nmap <leader>qf <Plug>(coc-fix-current)
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " NERDTree
+let NERDTreeShowHidden=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -101,6 +102,9 @@ call NERDTreeHighlightFile('py', 'Blue', 'none', '#ff00ff', '#151515')
 let g:ackprg = 'ag --vimgrep'
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
+
+" FZF
+nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
 
 " vim-test
 nmap <silent> t<C-n> :TestNearest<CR> " t Ctrl+n
