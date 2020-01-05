@@ -1,9 +1,13 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact"],
-    "prettier.onlyUseLocalVersion": true,
-    "prettier.eslintIntegration": true,
-    "eslint.autoFixOnSave": true,
-    "snippets.extends": {
-        "javascriptreact": ["javascript"]
-    }
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "prettier.onlyUseLocalVersion": true,
+  "prettier.eslintIntegration": true,
+  "eslint.filetypes": ["js", "jsx"],
+  "eslint.autoFixOnSave": true,
+  "tslint.autoFixOnSave": true,
+  "snippets.extends": {
+      "typescript": ["javascript"],
+      "javascriptreact": ["javascript"]
+  }
 }
+
