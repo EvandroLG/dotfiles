@@ -4,23 +4,23 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/mru.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'mxw/vim-jsx'
 Plug 'mileszs/ack.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'janko/vim-test'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
 call plug#end()
 
 let g:gruvbox_contrast_dark='hard'
 color gruvbox
-let g:airline_theme='dracula'
 
 set cursorline
 set showcmd " show command in bottom bar
@@ -56,10 +56,9 @@ command! MakeTags !ctags -R .
 nmap <silent><Leader>s <Esc>:%s/\s\+$//g<CR>"
 
 " indentetion
-set autoindent
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 filetype indent on " load filetype-specific indent files
@@ -67,6 +66,7 @@ filetype indent on " load filetype-specific indent files
 " coc.nvim
 let g:coc_global_extensions = [
     \ 'coc-json',
+    \ 'coc-tslint-plugin',
     \ 'coc-tsserver',
     \ 'coc-snippets',
     \ 'coc-prettier',
@@ -94,6 +94,9 @@ endfunction
 call NERDTreeHighlightFile('json', 'LightYellow', 'none', 'yellow', '#151515')
 call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('js', 'Yellow', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('jsx', 'Yellow', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('ts', 'Green', 'none', 'Green', '#151515')
+call NERDTreeHighlightFile('tsx', 'Green', 'none', 'Green', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('rb', 'Red', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('py', 'Blue', 'none', '#ff00ff', '#151515')
