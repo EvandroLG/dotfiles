@@ -63,6 +63,10 @@ set expandtab
 
 filetype indent on " load filetype-specific indent files
 
+" terminal
+:tnoremap <Esc> <C-\><C-n>
+:autocmd TermOpen * setlocal statusline=%{b:term_title}
+
 " coc.nvim
 let g:coc_global_extensions = [
     \ 'coc-json',
