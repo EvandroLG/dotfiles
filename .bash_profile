@@ -38,6 +38,5 @@ alias npm_update="npm install -g npm"
 alias npm_flush="rm -rf node_modules && npm i"
 
 # bash completion
-if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-. "$(brew --prefix)/etc/bash_completion"
-fi
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+source /usr/local/etc/bash_completion.d/git-completion.bash
