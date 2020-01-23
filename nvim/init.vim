@@ -17,8 +17,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
+Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
 call plug#end()
 
+let s:fontsize = 20
 let g:gruvbox_contrast_dark='hard'
 color gruvbox
 
@@ -56,16 +58,12 @@ command! MakeTags !ctags -R .
 nmap <silent><Leader>s <Esc>:%s/\s\+$//g<CR>"
 
 " indentetion
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 filetype indent on " load filetype-specific indent files
-
-" terminal
-:tnoremap <Esc> <C-\><C-n>
-:autocmd TermOpen * setlocal statusline=%{b:term_title}
 
 " coc.nvim
 let g:coc_global_extensions = [
@@ -119,3 +117,11 @@ nmap <silent> t<C-f> :TestFile<CR>    " t Ctrl+f
 nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
 nmap <silent> t<C-l> :TestLast<CR>    " t Ctrl+l
 nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
+
+" vim-import-cost
+augroup import_cost_auto_run
+  autocmd!
+  autocmd InsertLeave *.js,*.jsx,*.ts,*.tsx ImportCost
+  autocmd BufEnter *.js,*.jsx,*.ts,*.tsx ImportCost
+  autocmd CursorHold *.js,*.jsx,*.ts,*.tsx ImportCost
+augroup END
