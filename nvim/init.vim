@@ -87,6 +87,7 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " NERDTree
 let NERDTreeShowHidden=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-t> :NERDTreeToggle<CR>
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
     exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
