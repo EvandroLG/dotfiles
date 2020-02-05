@@ -12,7 +12,7 @@ if [[ $(command -v brew) == "" ]]; then
 fi
 
 echo "Updating Brew..."
-brew install wget ren fzf htop bash-completion the_silver_searcher node neovim
+brew install wget ren fzf htop bash-completion the_silver_searcher node neovim ngrok
 
 wget https://raw.githubusercontent.com/EvandroLG/dotfiles/master/git/.gitconfig
 wget https://raw.githubusercontent.com/EvandroLG/dotfiles/master/git/.gitignore
