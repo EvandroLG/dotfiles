@@ -18,12 +18,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
+Plug 'norcalli/nvim-colorizer.lua'
+
 call plug#end()
 
 let s:fontsize = 20
 let g:gruvbox_contrast_dark='hard'
 color gruvbox
 
+set termguicolors
 set cursorline
 set showcmd " show command in bottom bar
 set mouse=a " set mouse on
@@ -127,3 +130,6 @@ augroup import_cost_auto_run
   autocmd BufEnter *.js,*.jsx,*.ts,*.tsx ImportCost
   autocmd CursorHold *.js,*.jsx,*.ts,*.tsx ImportCost
 augroup END
+
+" nvim-colorizer
+lua require'colorizer'.setup()
