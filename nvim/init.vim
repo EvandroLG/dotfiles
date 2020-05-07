@@ -98,15 +98,15 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
     exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
-call NERDTreeHighlightFile('json', 'LightYellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('js', 'Yellow', 'none', '#ffa500', '#151515')
-call NERDTreeHighlightFile('jsx', 'Yellow', 'none', '#ffa500', '#151515')
-call NERDTreeHighlightFile('ts', 'Green', 'none', 'Green', '#151515')
-call NERDTreeHighlightFile('tsx', 'Green', 'none', 'Green', '#151515')
-call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
-call NERDTreeHighlightFile('rb', 'Red', 'none', '#ff00ff', '#151515')
-call NERDTreeHighlightFile('py', 'Blue', 'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('json', 'LightYellow', 'none', 'yellow', 'none')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', 'none')
+call NERDTreeHighlightFile('js', 'Yellow', 'none', '#ffa500', 'none')
+call NERDTreeHighlightFile('jsx', 'Yellow', 'none', '#ffa500', 'none')
+call NERDTreeHighlightFile('ts', 'Green', 'none', 'Green', 'none')
+call NERDTreeHighlightFile('tsx', 'Green', 'none', 'Green', 'none')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', 'none')
+call NERDTreeHighlightFile('rb', 'Red', 'none', '#ff00ff', 'none')
+call NERDTreeHighlightFile('py', 'Blue', 'none', '#ff00ff', 'none')
 
 " Ack
 let g:ackprg = 'ag --vimgrep'
