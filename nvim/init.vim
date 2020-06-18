@@ -19,6 +19,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 
