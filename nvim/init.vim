@@ -50,10 +50,13 @@ set title
 set autoread " automatically re-read file if a change was detected
 set nowrap " don't wrap long lines by default
 set list " show tabs
+
+" fold
 set foldmethod=indent
 set foldnestmax=10
 set foldcolumn=3
 set foldlevel=20
+nmap F za
 
 " highlight trailing whitespaces
 highlight RedundantSpaces ctermbg=red guibg=red
