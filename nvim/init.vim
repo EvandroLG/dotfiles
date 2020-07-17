@@ -1,10 +1,10 @@
 call plug#begin('~/.local/share/nvim/plugged')
+
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/mru.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'mxw/vim-jsx'
 Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -15,11 +15,13 @@ Plug 'janko/vim-test'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'leafgarland/typescript-vim'
-Plug 'ianks/vim-tsx'
 Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'jparise/vim-graphql'
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
