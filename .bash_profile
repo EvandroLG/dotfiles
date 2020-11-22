@@ -2,7 +2,7 @@
 
 export TERM=xterm-256color
 export CLICOLOR=1
-export LSCOLORS=Fafacxdxbxegedabagacad
+export LSCOLORS=ExFxCxDxBxegedabagacad
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export PATH="$HOME/mongodb/bin:$PATH"
@@ -15,9 +15,9 @@ GREEN=$(tput setaf 2);
 YELLOW=$(tput setaf 3);
 RESET=$(tput sgr0);
 
+# Shows the current branch if in a git repository
 function git_branch {
-  # Shows the current branch if in a git repository
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \(\1\)/';
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \(\1\)/'
 }
 
 export PS1='${YELLOW}\w${GREEN}$(git_branch)${RESET} $ '
