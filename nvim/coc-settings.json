@@ -1,13 +1,27 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json"
+  ],
   "prettier.onlyUseLocalVersion": true,
-  "prettier.eslintIntegration": true,
-  "eslint.filetypes": ["js", "jsx"],
+  "suggest.timeout": 4000,
+  "eslint.filetypes": [
+    "js",
+    "jsx",
+    "ts",
+    "tsx"
+  ],
   "eslint.autoFixOnSave": true,
   "tslint.autoFixOnSave": true,
   "snippets.extends": {
-      "typescript": ["javascript"],
-      "javascriptreact": ["javascript"]
+    "typescript": [
+      "javascript"
+    ],
+    "javascriptreact": [
+      "javascript"
+    ]
   }
 }
-
