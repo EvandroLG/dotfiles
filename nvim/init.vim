@@ -1,10 +1,10 @@
 call plug#begin('~/.local/share/nvim/plugged')
-
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/mru.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'mxw/vim-jsx'
 Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -15,17 +15,16 @@ Plug 'janko/vim-test'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
 Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'jparise/vim-graphql'
-Plug 'leafgarland/typescript-vim'
-Plug 'ianks/vim-tsx'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'mxw/vim-jsx'
 
 call plug#end()
 
 let s:fontsize = 20
+let g:gruvbox_termcolors=16
 let g:gruvbox_contrast_dark='hard'
 color gruvbox
 
@@ -46,7 +45,7 @@ set nowritebackup
 set number
 set statusline+=%F " add full file path to your existing statusline
 set showmatch " highlight matching [{()}]
-set lcs=tab:▸\ ,trail:· " show 'invisible' characters
+set lcs=tab:‚ñ∏\ ,trail:¬∑ " show 'invisible' characters
 set clipboard+=unnamedplus
 set title
 set autoread " automatically re-read file if a change was detected
@@ -71,12 +70,18 @@ command! MakeTags !ctags -R .
 nmap <silent><Leader>s <Esc>:%s/\s\+$//g<CR>"
 
 " indentetion
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 filetype indent on " load filetype-specific indent files
+
+" Automatic reload
+augroup myvimrc
+  au!
+  au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
 
 " coc.nvim
 let g:coc_global_extensions = [
@@ -88,14 +93,16 @@ let g:coc_global_extensions = [
     \ 'coc-eslint',
 \ ]
 
-nnoremap FF :CocCommand eslint.executeAutofix<Enter>
+"nnoremap FF :CocCommand eslint.executeAutofix<Enter>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <leader>qf <Plug>(coc-fix-current)
+nmap <leader> qf <Plug>(coc-fix-current)
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" to get correct comment highlighting
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " NERDTree
 let NERDTreeShowHidden=1
@@ -116,7 +123,8 @@ call NERDTreeHighlightFile('ts', 'Green', 'none', 'Green', 'none')
 call NERDTreeHighlightFile('tsx', 'Green', 'none', 'Green', 'none')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', 'none')
 call NERDTreeHighlightFile('rb', 'Red', 'none', '#ff00ff', 'none')
-call NERDTreeHighlightFile('py', 'Blue', 'none', '#ff00ff', 'none')
+call NERDTreeHighlightFile('py', 'LightBlue', 'none', '#ff00ff', 'none')
+call NERDTreeHighlightFile('lua', 'Blue', 'none', '#ff00ff', 'none')
 
 " Ack
 let g:ackprg = 'ag --vimgrep'
