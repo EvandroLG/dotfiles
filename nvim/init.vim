@@ -45,7 +45,7 @@ set nowritebackup
 set number
 set statusline+=%F " add full file path to your existing statusline
 set showmatch " highlight matching [{()}]
-set lcs=tab:‚ñ∏\ ,trail:¬∑ " show 'invisible' characters
+set lcs=tab:▸\ ,trail:· " show 'invisible' characters
 set clipboard+=unnamedplus
 set title
 set autoread " automatically re-read file if a change was detected

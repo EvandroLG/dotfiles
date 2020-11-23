@@ -4,16 +4,12 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "json"
+    "json",
+    "css",
+    "markdown"
   ],
   "prettier.onlyUseLocalVersion": true,
   "suggest.timeout": 4000,
-  "eslint.filetypes": [
-    "js",
-    "jsx",
-    "ts",
-    "tsx"
-  ],
   "eslint.autoFixOnSave": true,
   "tslint.autoFixOnSave": true,
   "snippets.extends": {
