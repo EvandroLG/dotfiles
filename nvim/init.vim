@@ -20,6 +20,7 @@ Plug 'ianks/vim-tsx'
 Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'jparise/vim-graphql'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 call plug#end()
 
@@ -105,17 +106,6 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " to get correct comment highlighting
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
 " NERDTree
 let NERDTreeShowHidden=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -163,3 +153,15 @@ augroup END
 
 " nvim-colorizer
 lua require'colorizer'.setup()
+
+" coc
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
