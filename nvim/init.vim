@@ -2,9 +2,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/mru.vim'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'mxw/vim-jsx'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim', { 'commit': '4145f53f3d343c389ff974b1f1a68eeb39fba18b' }
 Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -15,11 +14,13 @@ Plug 'janko/vim-test'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'jparise/vim-graphql'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 call plug#end()
 
@@ -45,7 +46,7 @@ set nowritebackup
 set number
 set statusline+=%F " add full file path to your existing statusline
 set showmatch " highlight matching [{()}]
-set lcs=tab:▸\ ,trail:· " show 'invisible' characters
+set lcs=tab:‚ñ∏\ ,trail:¬∑ " show 'invisible' characters
 set clipboard+=unnamedplus
 set title
 set autoread " automatically re-read file if a change was detected
@@ -91,6 +92,7 @@ let g:coc_global_extensions = [
     \ 'coc-snippets',
     \ 'coc-prettier',
     \ 'coc-eslint',
+    \ 'coc-lua',
 \ ]
 
 "nnoremap FF :CocCommand eslint.executeAutofix<Enter>
@@ -151,3 +153,15 @@ augroup END
 
 " nvim-colorizer
 lua require'colorizer'.setup()
+
+" coc
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
