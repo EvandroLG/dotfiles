@@ -21,6 +21,7 @@ Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'jparise/vim-graphql'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'pechorin/any-jump.vim'
 
 call plug#end()
 
@@ -52,6 +53,7 @@ set title
 set autoread " automatically re-read file if a change was detected
 set nowrap " don't wrap long lines by default
 set list " show tabs
+let mapleader = ','
 
 " fold
 set foldmethod=indent
@@ -165,3 +167,6 @@ endfunction
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+" any-jump
+nnoremap <leader>j :AnyJump<CR>
