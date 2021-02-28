@@ -53,7 +53,9 @@ set title
 set autoread " automatically re-read file if a change was detected
 set nowrap " don't wrap long lines by default
 set list " show tabs
+set scrolloff=8 " show lines after the cursor
 let mapleader = ','
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 
 " fold
 set foldmethod=indent
@@ -77,6 +79,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set smartcase
 
 filetype indent on " load filetype-specific indent files
 
