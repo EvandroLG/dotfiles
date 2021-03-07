@@ -12,8 +12,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'janko/vim-test'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
@@ -54,8 +53,17 @@ set autoread " automatically re-read file if a change was detected
 set nowrap " don't wrap long lines by default
 set list " show tabs
 set scrolloff=8 " show lines after the cursor
-let mapleader = ','
-nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+let mapleader = ' '
+
+" load configs
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>|
+
+" copy the whole file
+nnoremap <leader>Y gg"+yG
+
+" move lines up / down
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
 
 " fold
 set foldmethod=indent
@@ -108,8 +116,12 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader> qf <Plug>(coc-fix-current)
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 " to get correct comment highlighting
 autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" autoimport functionality
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " NERDTree
 let NERDTreeShowHidden=1
@@ -173,3 +185,21 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 " any-jump
 nnoremap <leader>j :AnyJump<CR>
+
+" Lightline
+let g:lightline = {
+      \ 'component_function': {
+      \   'filename': 'LightlineFilename',
+      \ }
+      \ }
+
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+
+  return expand('%')
+endfunction
