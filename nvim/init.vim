@@ -82,6 +82,9 @@ command! MakeTags !ctags -R .
 " remove blank spaces
 nmap <silent><Leader>s <Esc>:%s/\s\+$//g<CR>"
 
+" replace tabs to spaces
+nmap <Leader>ts <Esc>:%s/\t/  /g<CR>"
+
 " indentetion
 set tabstop=2
 set shiftwidth=2
