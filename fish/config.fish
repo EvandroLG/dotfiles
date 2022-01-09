@@ -15,6 +15,7 @@ alias ll="ls -lah"
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
+alias node_latest="sudo n latest"
 alias npm_clean='npm -g ls | grep -v "npm@" | awk "/@/ {print $2}" | awk -F@ "{print $1}" | xargs npm -g rm'
 alias npm_update="npm install -g npm"
 alias npm_flush="rm -rf node_modules && npm i"
