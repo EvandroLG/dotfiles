@@ -21,6 +21,8 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'jparise/vim-graphql'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'pechorin/any-jump.vim'
+Plug 'rafcamlet/nvim-luapad'
+Plug 'nvim-lua/plenary.nvim'
 
 call plug#end()
 
@@ -46,7 +48,7 @@ set nowritebackup
 set number
 set statusline+=%F " add full file path to your existing statusline
 set showmatch " highlight matching [{()}]
-set lcs=tab:‚ñ∏\ ,trail:¬∑ " show 'invisible' characters
+set lcs=tab:▸\ ,trail:· " show 'invisible' characters
 set clipboard+=unnamedplus
 set title
 set autoread " automatically re-read file if a change was detected
