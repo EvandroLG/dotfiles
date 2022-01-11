@@ -23,6 +23,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'pechorin/any-jump.vim'
 Plug 'rafcamlet/nvim-luapad'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -146,8 +147,8 @@ map <C-t> :NERDTreeToggle<CR>
 map <C-f> :NERDTreeFind<CR>
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-    exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-    exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
 call NERDTreeHighlightFile('json', 'LightYellow', 'none', 'yellow', 'none')
