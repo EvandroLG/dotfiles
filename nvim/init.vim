@@ -7,7 +7,7 @@ Plug 'junegunn/fzf.vim', { 'commit': '4145f53f3d343c389ff974b1f1a68eeb39fba18b' 
 Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'morhetz/gruvbox'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'janko/vim-test'
@@ -26,11 +26,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
-
-let s:fontsize = 20
-let g:gruvbox_termcolors=16
-let g:gruvbox_contrast_dark='hard'
-color gruvbox
 
 set termguicolors
 set cursorline
@@ -146,22 +141,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-t> :NERDTreeToggle<CR>
 map <C-f> :NERDTreeFind<CR>
 
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
-
-call NERDTreeHighlightFile('json', 'LightYellow', 'none', 'yellow', 'none')
-call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', 'none')
-call NERDTreeHighlightFile('js', 'Yellow', 'none', '#ffa500', 'none')
-call NERDTreeHighlightFile('jsx', 'Yellow', 'none', '#ffa500', 'none')
-call NERDTreeHighlightFile('ts', 'Green', 'none', 'Green', 'none')
-call NERDTreeHighlightFile('tsx', 'Green', 'none', 'Green', 'none')
-call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', 'none')
-call NERDTreeHighlightFile('rb', 'Red', 'none', '#ff00ff', 'none')
-call NERDTreeHighlightFile('py', 'LightBlue', 'none', '#ff00ff', 'none')
-call NERDTreeHighlightFile('lua', 'Blue', 'none', '#ff00ff', 'none')
-
 " Ack
 let g:ackprg = 'ag --vimgrep'
 cnoreabbrev Ack Ack!
@@ -205,7 +184,7 @@ nnoremap <leader>j :AnyJump<CR>
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'tokyonight',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -214,3 +193,15 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
+
+" Tokyonight
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
+
+let g:tokyonight_colors = {
+  \ 'hint': 'orange',
+  \ 'error': '#ff0000'
+\ }
+
+colorscheme tokyonight
