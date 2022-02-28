@@ -24,6 +24,7 @@ Plug 'pechorin/any-jump.vim'
 Plug 'rafcamlet/nvim-luapad'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'rhysd/vim-grammarous'
 
 call plug#end()
 
@@ -44,7 +45,7 @@ set nowritebackup
 set number
 set statusline+=%F " add full file path to your existing statusline
 set showmatch " highlight matching [{()}]
-set lcs=tab:▸\ ,trail:· " show 'invisible' characters
+set lcs=tab:‚ñ∏\ ,trail:¬∑ " show 'invisible' characters
 set clipboard+=unnamedplus
 set title
 set autoread " automatically re-read file if a change was detected
@@ -100,6 +101,7 @@ augroup END
 
 " coc.nvim
 let g:coc_global_extensions = [
+    \ 'coc-html',
     \ 'coc-json',
     \ 'coc-tslint-plugin',
     \ 'coc-tsserver',
