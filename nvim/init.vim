@@ -99,6 +99,9 @@ augroup myvimrc
   au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
 
+" terminal
+tnoremap <Esc> <C-\><C-n>
+
 " coc.nvim
 let g:coc_global_extensions = [
     \ 'coc-html',
