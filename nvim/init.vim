@@ -101,6 +101,7 @@ augroup END
 
 " terminal
 tnoremap <Esc> <C-\><C-n>
+nmap T :split \| terminal<CR>
 
 " coc.nvim
 let g:coc_global_extensions = [
