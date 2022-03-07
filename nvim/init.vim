@@ -25,6 +25,7 @@ Plug 'rafcamlet/nvim-luapad'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rhysd/vim-grammarous'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 call plug#end()
 
