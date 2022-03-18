@@ -72,6 +72,11 @@ set foldcolumn=3
 set foldlevel=20
 nmap F za
 
+" delete
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap <leader>p "_dP
+
 " highlight trailing whitespaces
 highlight RedundantSpaces ctermbg=red guibg=red
 match RedundantSpaces /\s\+$/
