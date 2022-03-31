@@ -1,5 +1,5 @@
 [user]
-    name = Evandro Leopoldino Gonçalves
+    name = Evandro Leopoldino Gon√ßalves
     email = evandrolgoncalves@gmail.com
 [color]
     status = auto
@@ -36,3 +36,7 @@
     meld = !git difftool -t meld --dir-diff
 [push]
     default = simple
+[credential]
+	helper = osxkeychain
+[pull]
+	rebase = false
