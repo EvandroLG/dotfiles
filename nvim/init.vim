@@ -53,6 +53,8 @@ set autoread " automatically re-read file if a change was detected
 set nowrap " don't wrap long lines by default
 set list " show tabs
 set scrolloff=8 " show lines after the cursor
+set synmaxcol=200
+set lazyredraw
 let mapleader = ' '
 
 " load configs
