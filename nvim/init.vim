@@ -26,6 +26,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rhysd/vim-grammarous'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'github/copilot.vim'
 
 call plug#end()
 
