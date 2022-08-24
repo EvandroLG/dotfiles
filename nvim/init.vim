@@ -148,7 +148,7 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " autoimport functionality
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
 
 " NERDTree
 let NERDTreeShowHidden=1
