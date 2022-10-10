@@ -27,6 +27,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'rhysd/vim-grammarous'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'github/copilot.vim'
+Plug 'simeji/winresizer'
 
 call plug#end()
 
