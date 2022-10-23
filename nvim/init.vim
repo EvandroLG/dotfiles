@@ -1,6 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/mru.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim', { 'commit': '4145f53f3d343c389ff974b1f1a68eeb39fba18b' }
@@ -23,11 +22,10 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'pechorin/any-jump.vim'
 Plug 'rafcamlet/nvim-luapad'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'rhysd/vim-grammarous'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'github/copilot.vim'
-Plug 'simeji/winresizer'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
 
 call plug#end()
 
@@ -48,15 +46,13 @@ set nowritebackup
 set number
 set statusline+=%F " add full file path to your existing statusline
 set showmatch " highlight matching [{()}]
-set lcs=tab:‚ñ∏\ ,trail:¬∑ " show 'invisible' characters
+set lcs=tab:▸\ ,trail:· " show 'invisible' characters
 set clipboard+=unnamedplus
 set title
 set autoread " automatically re-read file if a change was detected
 set nowrap " don't wrap long lines by default
 set list " show tabs
 set scrolloff=8 " show lines after the cursor
-set synmaxcol=200
-set lazyredraw
 let mapleader = ' '
 
 " load configs
@@ -74,12 +70,7 @@ set foldmethod=indent
 set foldnestmax=10
 set foldcolumn=3
 set foldlevel=20
-nmap F za
-
-" delete
-nnoremap <leader>d "_d
-xnoremap <leader>d "_d
-xnoremap <leader>p "_dP
+"nmap F za
 
 " highlight trailing whitespaces
 highlight RedundantSpaces ctermbg=red guibg=red
@@ -111,7 +102,7 @@ augroup END
 
 " terminal
 tnoremap <Esc> <C-\><C-n>
-nmap T :split \| terminal<CR>
+"nmap T :split \| terminal<CR>
 
 " coc.nvim
 let g:coc_global_extensions = [
@@ -136,7 +127,7 @@ function! s:show_documentation()
   endif
 endfunction
 
-"nnoremap FF :CocCommand eslint.executeAutofix<Enter>
+nnoremap FF :CocCommand eslint.executeAutofix<Enter>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -149,13 +140,7 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " autoimport functionality
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
-
-" NERDTree
-let NERDTreeShowHidden=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-t> :NERDTreeToggle<CR>
-map <C-f> :NERDTreeFind<CR>
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 " Ack
 let g:ackprg = 'ag --vimgrep'
@@ -221,3 +206,13 @@ let g:tokyonight_colors = {
 \ }
 
 colorscheme tokyonight
+
+" nvim-tree
+lua << EOF
+require("nvim-tree").setup({
+  open_on_setup = true
+})
+EOF
+
+map <C-t> :NvimTreeToggle<CR>
+map <C-f> :NvimTreeFindFile<CR>
