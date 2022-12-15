@@ -4,6 +4,7 @@ set -x VISUAL vim
 set -x EDITOR $VISUAL
 set -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude node_modules'
 set CDPATH .:$HOME:$HOME/Projects:$HOME/Desktop
+fish_add_path ~/.npm-global/bin
 
 ## colors
 set -x TERM xterm-256color
@@ -19,3 +20,6 @@ alias node_latest="sudo n latest"
 alias npm_clean='npm -g ls | grep -v "npm@" | awk "/@/ {print $2}" | awk -F@ "{print $1}" | xargs npm -g rm'
 alias npm_update="npm install -g npm"
 alias npm_flush="rm -rf node_modules && npm i"
+
+# Generated for envman. Do not edit.
+test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
