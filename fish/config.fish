@@ -23,3 +23,7 @@ alias npm_flush="rm -rf node_modules && npm i"
 
 # Generated for envman. Do not edit.
 test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
+
+function sdk
+    bash -c "source '$HOME/.sdkman/bin/sdkman-init.sh'; sdk $argv[1..]"
+end
