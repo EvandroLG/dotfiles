@@ -136,6 +136,12 @@ nmap <leader> qf <Plug>(coc-fix-current)
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
+" any-jump
+nnoremap <leader>j :AnyJump<CR>
+xnoremap <leader>j :AnyJumpVisual<CR>
+nnoremap <leader>ab :AnyJumpBack<CR>
+nnoremap <leader>al :AnyJumpLastResults<CR>
+
 " to get correct comment highlighting
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
