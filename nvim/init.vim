@@ -114,6 +114,7 @@ let g:coc_global_extensions = [
     \ 'coc-prettier',
     \ 'coc-eslint',
     \ 'coc-lua',
+    \ 'coc-pyright',    
 \ ]
 
 " Use K to show documentation in preview window
