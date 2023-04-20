@@ -55,6 +55,10 @@ set list " show tabs
 set scrolloff=8 " show lines after the cursor
 let mapleader = ' '
 
+" change the direction of new splits
+set splitbelow
+set splitright
+
 " load configs
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>|
 
