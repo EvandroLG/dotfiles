@@ -26,6 +26,7 @@ alias node_latest="sudo n latest"
 alias npm_clean='npm -g ls | grep -v "npm@" | awk "/@/ {print $2}" | awk -F@ "{print $1}" | xargs npm -g rm'
 alias npm_update="npm install -g npm"
 alias npm_flush="rm -rf node_modules && npm i"
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
 # Generated for envman. Do not edit.
 test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
