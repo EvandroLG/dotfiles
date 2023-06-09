@@ -26,6 +26,10 @@ Plug 'rhysd/vim-grammarous'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
+Plug 'heavenshell/vim-jsdoc', {
+  \ 'for': ['javascript', 'javascript.jsx','typescript'],
+  \ 'do': 'make install'
+\}
 
 call plug#end()
 
