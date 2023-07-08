@@ -26,10 +26,12 @@ Plug 'rhysd/vim-grammarous'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
+Plug 'fedepujol/move.nvim'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
 \}
+
 
 call plug#end()
 
@@ -204,6 +206,12 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 " any-jump
 nnoremap <leader>j :AnyJump<CR>
 
+" move.nvim
+nnoremap <A-Up> :MoveLine(-1)<CR>
+nnoremap <A-Down> :MoveLine(1)<CR>
+vnoremap <A-Up> :MoveBlock(-1)<CR>
+vnoremap <A-Down> :MoveBlock(1)<CR>
+
 " Lightline
 let g:lightline = {
       \ 'colorscheme': 'tokyonight',
@@ -225,8 +233,6 @@ let g:tokyonight_colors = {
   \ 'hint': 'orange',
   \ 'error': '#ff0000'
 \ }
-
-colorscheme tokyonight
 
 " nvim-tree
 lua << EOF
