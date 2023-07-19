@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
 
+fish_config theme choose "Dracula Official"
+
 set -x VISUAL vim
 set -x EDITOR $VISUAL
 set -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude node_modules'
@@ -9,6 +11,9 @@ fish_add_path /opt/homebrew/bin/
 set -x JAVA_HOME (/usr/libexec/java_home -v 1.7)
 fish_add_path $HOME/.jenv/bin
 #eval (jenv init - | source)
+
+# removes fish welcome message
+set fish_greeting ''
 
 ## colors
 set -x TERM xterm-256color
