@@ -126,7 +126,8 @@ let g:coc_global_extensions = [
     \ 'coc-react-refactor',
     \ 'coc-lua',
     \ 'coc-pyright',
-    \ 'coc-markdownlint',    
+    \ 'coc-markdownlint',
+    \ 'coc-clangd',
 \ ]
 
 " Use K to show documentation in preview window
