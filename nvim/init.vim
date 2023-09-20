@@ -71,6 +71,9 @@ nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>|
 " copy the whole file
 nnoremap <leader>Y gg"+yG
 
+" copy absolute path
+nnoremap <leader>cp :let @*=expand("%:p")<CR>
+
 " move lines up / down
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
