@@ -27,6 +27,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'fedepujol/move.nvim'
+Plug 'github/copilot.vim'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
