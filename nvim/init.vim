@@ -231,6 +231,10 @@ let g:lightline = {
 
 colorscheme dracula
 
+" Copilot
+imap <leader>n <Plug>(copilot-next)
+imap <leader>p <Plug>(copilot-previous)
+
 " nvim-tree
 lua << EOF
 require("nvim-tree").setup({})
