@@ -29,6 +29,7 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'fedepujol/move.nvim'
 Plug 'github/copilot.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
@@ -258,10 +259,26 @@ require'nvim-treesitter.configs'.setup {
       "ruby",
       "fish",
     },
+    sync_install = false,
     auto_install = true,
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = true,
+        additional_vim_regex_highlighting = false,
+    },
+    indent = {
+        enable = true,
+    },
+    refactor = {
+      highlight_definitions = {
+        enable = true,
+        clear_cursor_mode = true,
+      },
+      smart_rename = {
+        enable = true,
+        keymaps = {
+          smart_rename = "grr",
+        },
+      },
     },
 }
 EOF
