@@ -1,13 +1,6 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "css",
-    "markdown"
-  ],
+  "coc.preferences.formatOnSave": true,
+  "coc.preferences.useQuickfixForLocations": true,
   "prettier.onlyUseLocalVersion": true,
   "suggest.timeout": 4000,
   "eslint.autoFixOnSave": true,
@@ -19,5 +12,9 @@
     "javascriptreact": [
       "javascript"
     ]
-  }
+  },
+  "snippets.ultisnips.pythonPrompt": false,
+  "typescript.autoClosingTags": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }
