@@ -6,7 +6,7 @@ Plug 'junegunn/fzf.vim', { 'commit': '4145f53f3d343c389ff974b1f1a68eeb39fba18b' 
 Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'tomasiser/vim-code-dark'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'janko/vim-test'
@@ -28,6 +28,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'fedepujol/move.nvim'
 Plug 'github/copilot.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
@@ -60,6 +61,7 @@ set autoread " automatically re-read file if a change was detected
 set nowrap " don't wrap long lines by default
 set list " show tabs
 set scrolloff=8 " show lines after the cursor
+set formatexpr=CocAction('formatSelected') " format selected block of code
 let mapleader = ' '
 
 " change the direction of new splits
@@ -219,7 +221,7 @@ vnoremap <A-Down> :MoveBlock(1)<CR>
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'dracula',
+      \ 'colorscheme': 'codedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -229,11 +231,39 @@ let g:lightline = {
       \ },
       \ }
 
-colorscheme dracula
+colorscheme codedark
 
 " Copilot
 imap <leader>n <Plug>(copilot-next)
 imap <leader>p <Plug>(copilot-previous)
+
+" nvim-treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = {
+      "c",
+      "lua",
+      "vim",
+      "vimdoc",
+      "query",
+      "javascript",
+      "typescript",
+      "tsx",
+      "json",
+      "html",
+      "css",
+      "graphql",
+      "python",
+      "ruby",
+      "fish",
+    },
+    auto_install = true,
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = true,
+    },
+}
+EOF
 
 " nvim-tree
 lua << EOF
