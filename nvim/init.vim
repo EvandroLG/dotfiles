@@ -236,8 +236,8 @@ let g:lightline = {
 colorscheme codedark
 
 " Copilot
-imap <leader>n <Plug>(copilot-next)
-imap <leader>p <Plug>(copilot-previous)
+imap <C-n> <Plug>(copilot-next)
+imap <C-p> <Plug>(copilot-previous)
 
 " nvim-treesitter
 lua << EOF
