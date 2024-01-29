@@ -30,6 +30,7 @@ Plug 'fedepujol/move.nvim'
 Plug 'github/copilot.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'windwp/nvim-ts-autotag'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
@@ -279,6 +280,9 @@ require'nvim-treesitter.configs'.setup {
           smart_rename = "grr",
         },
       },
+    },
+    autotag = {
+      enable = true,
     },
 }
 EOF
