@@ -137,6 +137,7 @@ let g:coc_global_extensions = [
     \ 'coc-pyright',
     \ 'coc-markdownlint',
     \ 'coc-clangd',
+    \ 'coc-java',
 \ ]
 
 " Use K to show documentation in preview window
