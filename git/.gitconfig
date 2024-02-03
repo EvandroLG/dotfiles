@@ -27,7 +27,7 @@
   editor = vim
   autocrlf = input
   eol = lf
-  pager = delta
+    pager = less - RFX
 [alias]
   st = status
   ci = commit
