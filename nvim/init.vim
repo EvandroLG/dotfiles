@@ -125,6 +125,7 @@ tnoremap <Esc> <C-\><C-n>
 
 " coc.nvim
 let g:coc_global_extensions = [
+    \ 'coc-markdownlint',
     \ 'coc-html',
     \ 'coc-json',
     \ 'coc-tslint-plugin',
