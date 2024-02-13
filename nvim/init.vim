@@ -139,6 +139,7 @@ let g:coc_global_extensions = [
     \ 'coc-markdownlint',
     \ 'coc-clangd',
     \ 'coc-java',
+    \ 'coc-go'
 \ ]
 
 " Use K to show documentation in preview window
