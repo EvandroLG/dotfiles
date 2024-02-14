@@ -20,4 +20,7 @@
   "codeLens.enable": true,
   "java.referencesCodeLens.enabled": true,
   "java.jdt.ls.vmargs": "-javaagent:/user/local/share/lombok/lombok.jar"
+  "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home",
+  "metals.javaHome": "/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home",
+  "metals.enable": true
 }
