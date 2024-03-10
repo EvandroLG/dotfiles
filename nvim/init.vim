@@ -32,6 +32,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'leoluz/nvim-dap-go'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
@@ -338,3 +341,27 @@ tnoremap zz <C-\><C-n>:call TermToggle(12)<CR>
 " Terminal go back to normal mode
 tnoremap <Esc> <C-\><C-n>
 tnoremap :q! <C-\><C-n>:q!<CR>
+
+" Debugging
+lua require('dap-go').setup()
+lua require("dapui").setup()
+
+nnoremap <Leader>b :lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <Leader>bc :lua require'dap'.continue()<CR>
+
+" DAP UI
+lua << EOF
+local dap, dapui = require("dap"), require("dapui")
+dap.listeners.before.attach.dapui_config = function()
+  dapui.open()
+end
+dap.listeners.before.launch.dapui_config = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated.dapui_config = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited.dapui_config = function()
+  dapui.close()
+end
+E
