@@ -35,6 +35,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'leoluz/nvim-dap-go'
+Plug 'rmagatti/auto-session'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
@@ -364,4 +365,7 @@ end
 dap.listeners.before.event_exited.dapui_config = function()
   dapui.close()
 end
-E
+EOF
+
+" Auto Session
+lua require('auto-session').setup()
