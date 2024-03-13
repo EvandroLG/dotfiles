@@ -93,7 +93,7 @@ set foldmethod=indent
 set foldnestmax=10
 set foldcolumn=3
 set foldlevel=20
-"nmap F za
+nmap fa za
 
 " highlight trailing whitespaces
 highlight RedundantSpaces ctermbg=red guibg=red
@@ -248,6 +248,9 @@ colorscheme codedark
 imap <C-n> <Plug>(copilot-next)
 imap <C-p> <Plug>(copilot-previous)
 
+" Auto Session
+lua require('auto-session').setup()
+
 " nvim-treesitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {
@@ -366,6 +369,3 @@ dap.listeners.before.event_exited.dapui_config = function()
   dapui.close()
 end
 EOF
-
-" Auto Session
-lua require('auto-session').setup()
