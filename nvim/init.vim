@@ -36,11 +36,11 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'leoluz/nvim-dap-go'
 Plug 'rmagatti/auto-session'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
 \}
-
 
 call plug#end()
 
@@ -369,3 +369,8 @@ dap.listeners.before.event_exited.dapui_config = function()
   dapui.close()
 end
 EOF
+
+" Gitsigns
+lua require('gitsigns').setup()
+nnoremap <leader>gp :Gitsigns preview_hunk<CR>
+nnoremap <leader>gb :Gitsigns toggle_current_line_blame<CR>
