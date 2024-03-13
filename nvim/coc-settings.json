@@ -1,4 +1,5 @@
 {
+  "coc.preferences.extensionUpdateCheck": "weekly",
   "coc.preferences.formatOnSave": true,
   "coc.preferences.useQuickfixForLocations": true,
   "prettier.onlyUseLocalVersion": true,
@@ -19,7 +20,8 @@
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "codeLens.enable": true,
   "java.referencesCodeLens.enabled": true,
-  "java.jdt.ls.vmargs": "-javaagent:/user/local/share/lombok/lombok.jar"
+  "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok-1.18.30.jar",
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
   "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home",
   "metals.javaHome": "/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home",
   "metals.enable": true
