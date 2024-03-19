@@ -37,6 +37,7 @@ Plug 'rcarriga/nvim-dap-ui'
 Plug 'leoluz/nvim-dap-go'
 Plug 'rmagatti/auto-session'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'fatih/vim-go'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
@@ -127,6 +128,10 @@ augroup END
 tnoremap <Esc> <C-\><C-n>
 "nmap T :split \| terminal<CR>
 
+" vim-go
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
 " coc.nvim
 let g:coc_global_extensions = [
     \ 'coc-markdownlint',
@@ -145,6 +150,8 @@ let g:coc_global_extensions = [
     \ 'coc-java',
     \ 'coc-go'
 \ ]
+
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
