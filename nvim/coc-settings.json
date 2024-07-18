@@ -19,6 +19,14 @@
   "typescript.autoClosingTags": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+
+  // Python
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.formatting.provider": "black",
+  "python.sortImports.path": "isort",
+  
+  // Java
   "codeLens.enable": true,
   "java.referencesCodeLens.enabled": true,
   "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok-1.18.30.jar",
