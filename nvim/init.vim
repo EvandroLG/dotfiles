@@ -21,7 +21,6 @@ Plug 'jparise/vim-graphql'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'pechorin/any-jump.vim'
 Plug 'rafcamlet/nvim-luapad'
-Plug 'nvim-lua/plenary.nvim'
 Plug 'rhysd/vim-grammarous'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
@@ -42,6 +41,12 @@ Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
 \}
+
+Plug 'github/copilot.vim'
+Plug 'stevearc/dressing.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
 call plug#end()
 
@@ -376,3 +381,9 @@ EOF
 lua require('gitsigns').setup()
 nnoremap <leader>gp :Gitsigns preview_hunk<CR>
 nnoremap <leader>gb :Gitsigns toggle_current_line_blame<CR>
+
+"  Avante
+lua << EOF
+require('avante_lib').load()
+require('avante').setup({})
+EOF
