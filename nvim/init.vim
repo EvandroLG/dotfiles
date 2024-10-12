@@ -385,5 +385,7 @@ nnoremap <leader>gb :Gitsigns toggle_current_line_blame<CR>
 "  Avante
 lua << EOF
 require('avante_lib').load()
-require('avante').setup({})
+require('avante').setup({
+  provider = 'openai',
+})
 EOF
