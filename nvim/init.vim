@@ -389,3 +389,6 @@ require('avante').setup({
   provider = 'openai',
 })
 EOF
+
+" MRU
+command! -nargs=* MRURight rightbelow vnew | MRU <args>
