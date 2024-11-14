@@ -172,6 +172,7 @@ endfunction
 
 nnoremap FF :CocCommand eslint.executeAutofix<Enter>
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gv :vsplit<CR><Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
