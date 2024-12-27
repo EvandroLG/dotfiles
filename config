@@ -1,0 +1,3 @@
+font-size = 18
+keybind = cmd+right=next_tab
+keybind = cmd+left=previous_tab
