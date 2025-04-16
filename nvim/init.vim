@@ -47,6 +47,8 @@ Plug 'stevearc/dressing.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'olimorris/codecompanion.nvim'
 
 call plug#end()
 
@@ -396,3 +398,17 @@ EOF
 
 " MRU
 command! -nargs=* MRURight rightbelow vnew | MRU <args>
+
+" CodeCompanion
+lua << EOF
+require('codecompanion').setup({
+  strategies = {
+    chat = {
+      adapter = "anthropic",
+    },
+    inline = {
+      adapter = "anthropic",
+    },
+  },
+})
+EOF
