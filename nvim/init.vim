@@ -77,6 +77,7 @@ set nowrap " don't wrap long lines by default
 set list " show tabs
 set scrolloff=8 " show lines after the cursor
 set formatexpr=CocAction('formatSelected') " format selected block of code
+set wrap
 let mapleader = ' '
 
 " change the direction of new splits
