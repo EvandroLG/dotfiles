@@ -46,7 +46,6 @@ Plug 'github/copilot.vim'
 Plug 'stevearc/dressing.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'MunifTanjim/nui.nvim'
-Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'olimorris/codecompanion.nvim'
 
@@ -386,16 +385,6 @@ lua require('gitsigns').setup()
 nnoremap <leader>gp :Gitsigns preview_hunk<CR>
 nnoremap <leader>gb :Gitsigns toggle_current_line_blame<CR>
 
-"  Avante
-lua << EOF
-require('avante_lib').load()
-require('avante').setup({
-  provider = 'openai',
-  openai = {
-    model = "gpt-4o-mini",
-  }
-})
-EOF
 
 " MRU
 command! -nargs=* MRURight rightbelow vnew | MRU <args>
