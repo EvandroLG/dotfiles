@@ -30,6 +30,7 @@ brew install \
   aicommits
 
 brew install --cask docker
+brew install --cask keepingyouawake
 
 # ---------------------------
 # Java setup
