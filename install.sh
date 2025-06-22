@@ -26,6 +26,7 @@ brew install \
   openjdk \
   bat \
   fd \
+  jq \
   wget \
   aicommits
 
