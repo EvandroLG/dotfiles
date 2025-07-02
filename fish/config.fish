@@ -40,7 +40,6 @@ test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.
 source "$HOME/.cargo/env.fish"
 
 # Node
-# Node
 function __nvm_auto --on-variable PWD
   if test -f .nvmrc
     nvm use
