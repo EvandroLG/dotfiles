@@ -55,7 +55,6 @@ set termguicolors
 set cursorline
 set showcmd " show command in bottom bar
 set mouse=a " set mouse on
-set pastetoggle=<F2> " set auto-indenting for code paste
 set wildmenu " show completion on the mode-line
 set incsearch
 set hlsearch " highlight search things
