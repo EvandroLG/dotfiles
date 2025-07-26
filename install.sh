@@ -28,6 +28,7 @@ brew install \
   fd \
   jq \
   wget \
+  terminal-notifier \
   aicommits
 
 brew install --cask docker
