@@ -1,0 +1,41 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "cmd+i",
+        "command": "composerMode.agent"
+    },
+    {
+        "key": "cmd+e",
+        "command": "composerMode.background"
+    },
+    {
+        "key": "z z",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.toggleSidebarVisibility",
+    },
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "list.select",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+w left",
+        "command": "workbench.action.focusSideBar"
+    },
+    {
+        "key": "ctrl+w right",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "space c p",
+        "command": "copyRelativeFilePath"
+    }
+]

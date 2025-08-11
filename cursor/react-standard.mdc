@@ -1,0 +1,19 @@
+---
+globs: *.tsx
+alwaysApply: false
+---
+
+When generating or refactoring React code, always:
+- Use TypeScript with proper types and interfaces.
+- Follow React Hooks rules (no hooks inside loops/conditions, always at top level).
+- Prefer custom hooks to abstract repeated logic.
+- Write clear, minimal JSX with semantic HTML elements.
+- Use React.memo or useMemo / useCallback when beneficial for performance.
+- Keep state minimal and colocated. Prefer derived data over duplicating state.
+- Use controlled components for forms unless read-only.
+- Split large components into smaller, reusable ones.
+- Write short, descriptive component and prop names.
+- Add minimal JSDoc comments for complex logic.
+- Avoid any in TypeScript unless absolutely necessary.
+- Use libraries like SWR or React Query for async data, not manual useEffect + fetch unless simple.
+- For styles, prefer Tailwind or CSS Modules (based on project style guide).
