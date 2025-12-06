@@ -1,0 +1,31 @@
+{
+  "editor.fontSize": 16,
+  "editor.fontFamily": "JetBrains Mono, Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "editor.lineHeight": 1.6,
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Window / UI
+  "window.commandCenter": true,
+
+  // Languages / Tools
+  "makefile.configureOnOpen": true,
+
+  // Git
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+
+  // Terminal
+  "terminal.integrated.fontFamily": "JetBrains Mono, monospace",
+  "terminal.integrated.fontSize": 14,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.editor.enablePreview": false,
+  "git.openRepositoryInParentFolders": "always",
+
+  // Vim
+  "vim.useSystemClipboard": true
+}
